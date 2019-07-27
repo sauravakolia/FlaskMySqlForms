@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>datatable</title>
+</head>
+<body>
+
+	<table align="center" border="1" >
+
+		<thead>
+			<th>id</th>
+			<th>Full Name</th>
+			<th>ORGANISATION NAME</th>
+			<th>E-MAIL ID</th>
+			<th>Mobile</th>
+			<th>Documents</th>
+			
+		</thead>
+		<tbody>
+			{% for post,doc_info in posts %}
+
+				<tr>
+
+					{%for i in post%}
+						{% if i==post[0]%}
+							<td>
+								<a href="{{url_for('hostdata', type=i)}}">{{i}}</a>
+							</td>
+						{%else%}	
+							<td>{{i}}</td>
+						{%endif%}	
+						
+					{% endfor %}
+
+					<td>
+						{% for y in doc_info %}
+							<a href="{{url_for('send',doc=doc_dict[y])}}" target="blank" >{{y+','}}</a>
+					
+						{% endfor%}
+					</td>	
+
+				</tr>
+			{% endfor %}	
+			
+		</tbody>
+	</table>
+
+
+	
+</body>
+</html>

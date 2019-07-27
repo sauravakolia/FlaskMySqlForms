@@ -1,0 +1,1076 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<title>Ficci Higher Education Summit & Exhibition 2019|Higher Educaion Exhibition|Conference|Event|B2B|New Delhi India</title>
+		<meta name="description" content="Welcome to Ficci Higher Education Summit & Exhibition 2019 – a three day exhibition & conference summit featuring an ideal stage to tap the Asian market and network across continents with educators & those from the educational supplies & training industry. Ficci Higher Education Summit & Exhibition 2018 was the largest exhibition in India"/>
+		<meta name="keywords" content="Ficci Higher Education Summit & Exhibition, Ficci Higher Education Summit & Exhibition 2019, HES 2019, Higher Education Exhibition & Conference, Higher Education Summit, Higher Education Exhibition, Higher Education Conference, FICCI Higher Education Summit, India Higher Education, Higher Education in India, Higher Education Institutes in India, International Higher Education Exhibiton & Summit"/>		
+				
+		<link rel="stylesheet" type="text/css" href="css/social.css">		
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css?888888.88">
+		<link href="css/jquery.countdown.css" rel="stylesheet" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+		<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" media="screen" />
+
+		<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="http://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css"/><script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+		<script src="js/jquery.plugin.js"></script>
+		<script src="js/jquery.countdown.js"></script>
+		<script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+	
+
+	<script type="text/javascript">
+
+		pic1 = new Image(16, 16); 
+		pic1.src = "images/animated-loading.gif";
+		$(document).ready(function(){
+
+			jQuery("#formID").validationEngine();
+
+			var austDay = new Date();
+			austDay = new Date(austDay.getFullYear() + 0, 11 - 1, 10, 10, 0, 0);
+			$('#defaultCountdown').countdown({until: austDay});
+			$('#year').text(austDay.getFullYear());
+
+			$('.gallery').bxSlider({
+				mode: 'horizontal',
+				auto: 'true',
+				moveSlides:1,
+				minSlides: 1,
+				maxSlides:20,
+				slideMargin: 100
+			});
+
+			$(window).bind('scroll', function() {
+				var maincontentholder = $(".maincontentholder").offset();
+		      if ($(window).scrollTop() > maincontentholder.top) {
+		        $('.navholder').addClass('sticky');
+		       }
+		       else if($(window).scrollTop() < maincontentholder.top) {
+		         $('.navholder').removeClass('sticky');
+		       }
+    		});
+
+			$('#navigation > li').hover(
+				function () {
+					$('a',$(this)).stop().animate({'marginLeft':'190px'},200);
+				},
+				function () {
+					$('a',$(this)).stop().animate({'marginLeft':'-1px'},300);
+				}
+			);
+
+			$("#myusername").change(function() { 
+				var usr = $("#myusername").val();
+				if(usr.length >= 3)
+				{
+					$("#status").html('<img align="absmiddle" src="images/animated-loading.gif" /> Checking availability...');
+					$.ajax({ 
+						type: "POST", 
+						url: "checkuser.php", 
+						data: "uname="+ usr, 
+						success: function(msg){//alert(msg);
+
+							if(msg == 'OK')
+							{ 
+								document.getElementById('chkfld').value="Available";
+								document.getElementById('email1').value=usr;
+								$("#status").html('<span style="color: green;">User Available!</span>');
+							} 
+							else 
+							{ 
+								document.getElementById('chkfld').value="Not Available";
+								document.getElementById('email1').value=usr;
+								$("#status").html(msg);
+							}
+
+						}
+					});
+				}
+				else
+				{
+					$("#status").html('<span style="color: red;">The username should have at least 3 characters.</span>');
+				}
+			});
+
+			$("#scheme").change(function() { 
+				var scheme = $("#scheme").val();
+				if(scheme=="Pavilion")
+				{
+					$("#area").val('0');
+					$('#area').attr('disabled', '');
+					$("#mypavilion").css("display", "block");
+				}
+				else
+				{
+					$("#area").val('');
+					$('#area').removeAttr('disabled');				
+					$("#pavilion").val('');
+					$("#mypavilion").css("display", "none");
+				}
+			});
+
+			$("#country").change(function() { 
+				var country = $("#country").val();
+				$.ajax({ 
+					type: "POST", 
+					url: "checkcode.php", 
+					data: "countryname="+ country, 
+					success: function(msg){ //alert(msg);
+						document.getElementById('phone1').value=msg;
+						document.getElementById('fax1').value=msg;
+						document.getElementById('mobile1').value=msg;
+					}
+				});
+			});
+		});
+		//-->
+	</script>
+	</head>
+	<body>
+		<!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74684527-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+ -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123638053-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123638053-2');
+</script> -->	
+        <ul class="rightSide" style="display: none;">    
+	<li><a href="ExhibitorRegistration.php">Book A Stand</a></li>    
+	<li><a href="JoinNewsletter.php">Joining Mailing List</a></li>	
+	<li><a href="ContactUs.php">Contact Us</a></li>	
+	<li><a href="#">Site Map</a></li>	
+</ul>
+<ul id="navigation" style="display: none;">    
+	<li >        
+		<a title="">
+			<img src="images/follow-us.png" border="0" usemap="#Map2"/>            
+			<map name="Map2" id="Map2">                
+				<area shape="rect" coords="7,51,51,99" href="https://www.facebook.com/FICCIHigherEducationSummit/" target="_blank" />                
+				<area shape="rect" coords="61,49,114,100" href="https://twitter.com/ficci_hes" target="_blank" />                
+				<area shape="rect" coords="127,48,177,100" href="https://www.linkedin.com/company/13196603?trk=tyah&trkInfo=clickedVertical%3Acompany%2CentityType%3AentityHistoryName%2CclickedEntityId%3Acompany_company_company_13196603%2Cidx%3A2" target="_blank" />            
+			</map>        
+		</a>    
+	</li>
+</ul>		
+		<div class="container-fluid maincontainer">
+			<div class="row">
+				<!-- header -->
+				<div class="container">
+					<div class="clearfix">
+	<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 ">
+		<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12 logo2">
+			<div class="row">
+				<img src="images/ministry-logo1.jpg?7777.778" style="width:110px;">
+				
+				<img src="images/sepc-logo.png" style="width:90px;margin-right:25px;">
+				<!-- <img src="images/logo-aict.jpg" style="width:70px;"> -->
+				
+				
+			</div>
+
+
+			
+		</div>
+		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 mainlogo" style="margin-left:-30px;">
+			<h3 style="white-space:nowrap;margin-top:2px;font-family:roboto;color:#990012;font-size:26px; padding-top:10px;"><strong>15<sup>th</sup> FICCI Higher Education Summit 2019</strong></h3>
+			<div style="margin-top:-6px;font-family:roboto_condensedregular;font-size:16px;color:#990012;">A Global Conference & Exhibition</div>
+			<!--<div style="white-space:nowrap;margin-top:2px;font-family:roboto_condensedregular;color:#356cb2; line-height:20px;font-size:20px;">Leapfrogging to Education 4.0: Student at the Core</div>-->
+			<div style="margin-top:6px;font-family:roboto_condensedregular;font-size:16px;color:#000;">27<sup>th</sup> - 29<sup>th</sup> November 2019</div>
+			<div style="font-family:roboto_condensedregular;font-size:16px;color:#000;">Vigyan Bhawan</div>
+			<div style="font-family:arial;font-size:16px;color:#366cb2;font-weight: bold;text-shadow: 2px 2px 8px #366cb2;padding-top: 5px; ">Creative Economy. Nation Building: Higher Education as the catalyst</div>	
+		</div>
+		<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12 logo3" style="margin-top:-24px;">
+			<img src="images/logo-HRD.jpg" style="width:90px;">
+			<img src="images/logo.png?999999999.88" style="width:110px;" style="margin-right:0px;"/>
+			<img src="images/logo-ficci.png" style="width:70px; margin-left:10px;">
+			
+		</div>
+	</div>
+</div>
+
+				</div>
+				<!-- navigation start here -->
+				<section class="navholder">
+					<style type="text/css">
+	.tooptip-hover { display: none;}
+	
+.navbar ul li:hover .tooptip-hover {
+	position: absolute;
+	top: -18px;
+	left: 100px;
+	font-size: 11px;
+	font-weight: normal;
+	white-space: nowrap;
+	color: #000000;
+	background: #ffffff;
+	padding: 5px;
+	border-radius: 3px;
+	display: block;
+	z-index: 100;
+}
+ .navbar ul li:hover .tooptip-hover:hover{display: none;}
+</style>
+
+					<nav class="navbar navbar-inverse">
+						<div class="container">
+							<div class="navbar-header">
+								<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> 
+									<span class="sr-only">Toggle navigation</span> 
+									<span class="icon-bar"></span> 
+									<span class="icon-bar"></span> 
+									<span class="icon-bar"></span> 
+								</button>
+							</div>
+							<div class="collapse navbar-collapse" id="navbar">
+								<ul class="nav navbar-nav">
+									<li class="active"><a href="index.php">Home</a></li>
+									<li>
+										<a href="#">THE SHOW</a>
+										<ul class="dropdown-menu">
+											<!--<li><a tabindex="-1" href="AboutEvent.php">About the Event</a></li>-->
+											<li class="dropdown-submenu"><a href="Organisers.php">About Organisers</a></li>	
+											<li class="dropdown-submenu"><a href="features.php">Event Features</a></li>
+											<!-- <li class="dropdown-submenu"><a href="activities.php">Event Activities</a></li> -->
+											<!--<li class="dropdown-submenu"><a href="SupportingOrganisers.php">Supporting Organisations</a></li>-->
+											<li class="dropdown-submenu"><a href="pdf/2018/postshowreport2018.pdf" target="_blank">Post Show Report - HES 2018</a></li>
+											<li class="dropdown-submenu"><a href="pdf/2018/Post_show_report2017.pdf" target="_blank">Post Show Report - HES 2017</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">CONFERENCE</a>
+										<ul class="dropdown-menu">
+											<li><a tabindex="-1" href="Con-WhyAttend.php">Why Attend?</a></li>
+											<li class="dropdown-submenu"><a href="Con-WhoAttend.php">Who Can Attend?</a></li>
+											<!-- <li class="dropdown-submenu"><a href="Con-Highlights.php">Special Features</a></li> -->
+											<!-- <li class="dropdown-submenu"><a href="pdf/2018/Thematic_Program_19thSeptember.pdf#?66666666.77" target="_blank">Conference Agenda</a></li>
+											<li class="dropdown-submenu"><a href="speakers.php">Speakers</a></li> -->
+											<li class="dropdown-submenu"><a href="delegate.php" target="_blank">Delegate Registration</a></li>
+										</ul>										
+									</li>  									
+									<li>
+										<a href="#">EXHIBITION</a>
+										<ul class="dropdown-menu">
+											<li><a tabindex="-1" href="WhyExhibit.php">Why Exhibit?</a></li>
+											<li class="dropdown-submenu"><a href="ExhibitorProfile.php">Exhibitor Profile</a></li>
+											<li class="dropdown-submenu"><a href="Login.php">Exhibitor Login</a></li>				
+											<li class="dropdown-submenu"><a href="ExhibitorRegistration.php">Exhibitor Registration</a></li>
+											<li class="dropdown-submenu"><a href="pdf/2019/layout220519.pdf" target="_blank">Exhibition Layout Plan</a></li>
+											<li class="dropdown-submenu"><a href="VisaInvitation-Exhibitor.php">Visa Invitation Letter</a></li>
+											<li class="dropdown-submenu"><a href="StandPackages.php">Stand And Packages</a></li>
+											<li class="dropdown-submenu"><a href="TravelPartner.php">Official Travel Partner</a></li>
+											<li class="dropdown-submenu"><a href="pdf/2018/Exhibitor_Manual_HES_2018.pdf" target="_blank">Exhibitor Manual</a></li>
+											<li class="dropdown-submenu"><a href="pdf/2017/FICCI Delhi GST.pdf" target="_blank">FICCI GST Provisional Certificate</a></li>
+										</ul>										
+									</li>          
+         
+									<li>
+										<a href="#">VISITORS </a>
+										<ul class="dropdown-menu">
+											<!-- <li><a tabindex="-1" href="WhyVisit.php">Why to Visit?</a></li> -->
+											<!-- <li class="dropdown-submenu"><a href="WhoVisit.php">Who Should Visit?</a></li> -->
+											<li class="dropdown-submenu"><a href="VisitorRegistration.php">Visitor Registration</a></li>
+											<li class="dropdown-submenu"><a href="VisaInvitation-Visitor.php">Visa Invitation Letter</a></li>
+										</ul>											
+									</li>
+									<li>
+										<a href="Awards.php">AWARDS 2018</a>
+										<ul class="dropdown-menu">
+											<li><a tabindex="-1" href="Awards.php">FICCI Higher Education Excellence Awards 2018</a></li>
+										</ul>										
+									</li>									
+									<li>
+										<a href="#">REGISTRATION </a>
+										<ul class="dropdown-menu">
+											<li class="dropdown-submenu"><a href="delegate.php" target="_blank">Conference Delegate Registration</a></li>
+											<li><a tabindex="-1" href="ExhibitorRegistration.php">Exhibitor Registration</a></li>
+											<li class="dropdown-submenu"><a href="VisitorRegistration.php">Visitor Registration</a></li>
+											<li class="dropdown-submenu"><a href="Hosted-Delegate-Registration.php">Hosted Foreign Delegate Registration</a></li>
+											<li class="dropdown-submenu"><a href="MediaRegistration.php">Media Registration</a></li>
+											<li class="dropdown-submenu"><a href="EmbassyRegistration.php">Embassy Official Registration</a></li>
+										</ul>											
+									</li>          
+
+									<li>
+										<a href="#">PARTNERSHIP OPPORTUNITIES</a>
+										<ul class="dropdown-menu">
+											<!-- <li><a tabindex="-1" href="pdf/2017/HIGHER EDUCATION SPONSORSHIP OPPORTUNITIES.pdf" target="_blank">Sponsorship Opportunities</a></li> -->
+											<li><a tabindex="-1" href="advt-non-exhibitor.php">Advertisement Opportunities</a></li>
+										</ul>										
+									</li>									
+									<li><a href="ContactUs.php">CONTACT US</a></li>										
+								</ul>
+							</div>
+						</div>
+					</nav>
+					<nav class="navbar navbar-inverse secondarynav">
+						<div class="container">
+							<div class="navbar-header">
+								<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> 
+									<span class="sr-only">Toggle navigation</span> 
+									<span class="icon-bar"></span> 
+									<span class="icon-bar"></span> 
+									<span class="icon-bar"></span> 
+								</button>
+							</div>
+							<div class="collapse navbar-collapse" id="navbar" style="width: 1210px !important;">
+								<ul class="nav navbar-nav">
+									<li><a href="Venue.php">Venue</a></li>
+									<li><a href="pdf/2019/layout19042019.pdf" target="_blank">Floor PLAN</a></li>
+									          
+									<li>
+										<a href="#">HOSTED FOREIGN DELEGATES</a>
+										<ul class="dropdown-menu">
+											<li><a tabindex="-1" href="HostedDelegates.php">Highlights</a></li>
+											<!--<li><a tabindex="-1" href="Login.php">Hosted Foreign Delegate Login</a></li>-->
+											<li><a tabindex="-1" href="Hosted-Delegate-Registration.php">Hosted Foreign Delegate Registration</a></li>
+											<li class="dropdown-submenu"><a href="DelegateList2017.php">Hosted Foreign Delegates List</a></li>
+										</ul>										
+									</li>           
+									<li>
+										<a href="#">TRAVEL DESK</a>
+										<ul class="dropdown-menu">
+											<li><a tabindex="-1" href="AboutIndia.php">About India</a></li>
+											<li><a tabindex="-1" href="AboutNewDelhi.php">About New Delhi</a></li>
+											<li><a tabindex="-1" href="TravelPartner.php">Official Travel Partner</a></li>
+											<li><a tabindex="-1" href="VisaInformation.php">Visa Information</a></li>
+										</ul>										
+									</li>         
+									<li>
+										<a href="#" target="_parent">Conference Agenda</a>	
+										
+										<!-- <a href="#">MEDIA</a> -->
+										<!-- <ul class="dropdown-menu"> -->
+											<!--<li><a tabindex="-1" href="MediaInfo.php">General Information</a></li>-->
+											<!-- <li><a tabindex="-1" href="MediaRegistration.php">Media Registration</a></li>
+											<li><a tabindex="-1" href="#">Photo Gallery</a></li>
+											<li><a tabindex="-1" href="uc.php">Download Logos</a></li>
+										</ul> -->											
+									</li>          
+									<li>
+										<a href="speakers.php">Speakers</a>
+										<!-- <a href="#">DOWNLOADS</a>
+										<ul class="dropdown-menu">
+											<li><a href="pdf/2017/Summit Brochure.pdf" target="_blank">Brochure - HES 2017</a></li>
+											<li class="dropdown-submenu"><a href="pdf/2017/postshowreport.pdf" target="_blank">Post Show Report - HES 2016</a></li>
+											<li><a tabindex="-1" href="payment.php">Wire Transfer Details</a></li>
+											<li><a tabindex="-1" href="pdf/HIGHER EDUCATION SPONSORSHIP OPPORTUNITIES.pdf">Sponsorship Opportunities</a></li>
+											<li class="dropdown-submenu"><a href="pdf/2017/FICCI Delhi GST.pdf" target="_blank">FICCI GST Provisional Certificate</a></li>											
+											<li class="dropdown-submenu"><a href="pdf/2017/Exhibitor Manual HES 2017.pdf" target="_blank">Exhibitor Manual</a></li>
+											<li class="dropdown-submenu"><a href="pdf/2017/HES 2017 Booth.pdf" target="_blank">Exhibition Booth Panel Size</a></li>
+											<li class="dropdown-submenu"><a href="#" target="_blank">ITPO Approval Letter</a></li>
+										</ul>	 -->									
+									</li>
+									<li>
+										<a href="#">MASTER CLASSES</a>
+										<ul class="dropdown-menu">
+											<li><a tabindex="-1" href="pdf/2018/masterClasses26Oct2018.pdf" target="_blank">29th Oct 2018</a></li>
+											<li><a tabindex="-1" href="pdf/2018/masterClasses24Oct18.pdf" target="_blank">30th Oct 2018</a></li>
+											
+										</ul>		
+
+									</li>
+									<li><a href="thank-you-sponsors.php">Our Partners</a></li>
+									<li><a href="presentations.php">Presentations</a></li>
+									
+								</ul>
+							</div>
+						</div>
+					</nav>				</section>
+				<!-- navigation end -->
+				<!-- main content start here -->
+				<section class="maincontentholder">
+					<section class="container internalcontent">
+						<div class="col-lg-8">
+												
+							
+										
+
+							<!-- <div style="background-color:#e46713;height:200px;vertical-align:middle;display: table-cell;width: 70%;text-transform:uppercase;font-size:24px;text-align:center;color:#fff;"><strong>Registration has been closed now. For further details please contact to Organiser.</strong></div><br/><br/> -->
+
+
+							 <h1>Exhibitor Registration</h1>
+							<h2>Login Information  <div id="status" style="width: 500px; float:right;margin-right:-42px;"></div></h2>
+							<form id="formID" name="formID" method="post" class="row" action="">
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>Email</label>
+									<input type="text" class="form-control validate[required,custom[email]]" id="myusername" name="myusername" placeholder="E-Mail ID will be your Username" value="">
+									<input name="chkfld" type="hidden" class="textboxb_b" id="chkfld"  value=""/>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>Password</label>
+									<input type="password" class="form-control validate[required,minSize[6]]" id="passwd" name="passwd" placeholder="Minimum 6 Characters" value="">
+								</div>
+								<div class="form-group col-md-12">
+									<hr style="height: 1px; background-color:#C92A2A;" />
+									
+								</div>
+								<h4 class="col-md-12 col-sm-12 col-xs-12">Contact Information</h4>
+								<div class="form-group col-md-12">
+									<label for=""><span class="red">*</span>Company Name</label>
+									<input type="text" class="form-control validate[required,custom[onlyLetterSp]]" id="companyname" name="companyname" placeholder="" value="">
+								</div>
+								<h4 class="col-md-12 col-sm-12 col-xs-12">Head of the Organisation (CEO/MD/CMD/Director Etc.)</h4>								
+								<div class="form-group col-md-6">
+									<div class="row">
+										<div class="col-md-4 titleSel">
+											<label for=""><span class="red">*</span>Title</label>
+											<select class="form-control validate[required]" id="ceo_title" name="ceo_title">
+												<option value="" selected> - Select Title - </option>	
+												<option value="Mr." >&nbsp;Mr.</option>	
+												<option value="Mrs." >&nbsp;Mrs.</option>	
+												<option value="Ms." >&nbsp;Ms.</option>	
+												<option value="Dr." >&nbsp;Dr.</option>
+												<option value="Engg." >&nbsp;Engg.</option>
+												<option value="Prof." >&nbsp;Prof.</option>
+												<option value="Col." >&nbsp;Col.</option>
+											</select>
+										</div>
+										<div class="col-md-8">
+											<label for=""><span class="red">*</span>First Name</label>
+											<input type="text" class="form-control validate[required]" id="ceo_fname" name="ceo_fname" placeholder="" value="">
+										</div>
+									</div>
+								</div>
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>Last Name</label>
+									<input type="text" class="form-control validate[required]" id="ceo_lname" name="ceo_lname" placeholder="" value="">
+								</div>
+								<div class="form-group col-md-12">
+									<label for=""><span class="red">*</span>Designation</label>
+									<input type="text" class="form-control validate[required]" id="ceo_designation" name="ceo_designation" placeholder="" value="">
+								</div>										
+								<div class="form-group col-md-6">
+									<div class="row">
+										<div class="col-md-4 titleSel">
+											<label for=""><span class="red">*</span>Contact Title</label>
+											<select class="form-control validate[required]" id="contact_title" name="contact_title">
+												<option value="" selected> - Select Title - </option>	
+												<option value="Mr." >&nbsp;Mr.</option>	
+												<option value="Mrs." >&nbsp;Mrs.</option>	
+												<option value="Ms." >&nbsp;Ms.</option>	
+												<option value="Dr." >&nbsp;Dr.</option>
+												<option value="Engg." >&nbsp;Engg.</option>
+												<option value="Prof." >&nbsp;Prof.</option>
+												<option value="Col." >&nbsp;Col.</option>	
+											</select>
+										</div>
+										<div class="col-md-8">
+											<label for=""><span class="red">*</span>Contact First Name</label>
+											<input type="text" class="form-control validate[required]" id="contact_fname" name="contact_fname" placeholder="" value="">
+										</div>
+									</div>
+								</div>										
+
+
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>Contact Last Name</label>
+									<input type="text" class="form-control validate[required]" id="contact_lname" name="contact_lname" placeholder="" value="">
+								</div>
+
+
+								<div class="form-group col-md-12">
+									<label for=""><span class="red">*</span>Contact Designation</label>
+									<input type="text" class="form-control validate[required]" id="contact_designation" name="contact_designation" placeholder="" value="">
+								</div>	
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>Address Line 1</label>
+									<input type="text" class="form-control validate[required]" id="address1" name="address1" placeholder="" value="">
+								</div>
+
+								<div class="form-group col-md-6">
+									<label for="">Address Line 2</label>
+									<input type="text" class="form-control" id="address2" name="address2" placeholder="" value="">
+								</div>	
+								
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>City</label>
+									<input type="text" class="form-control validate[required]" id="city" name="city" placeholder="" value="">
+								</div>										
+								
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>Pin/Zip Code</label>
+									<input type="text" class="form-control validate[required,custom[onlyLetterNumber]]" id="zipcode" name="zipcode" placeholder="" value="">
+								</div>
+
+
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>State</label>
+									<input type="text" class="form-control validate[required]" id="state" name="state" placeholder="" value="">
+								</div>
+
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>Country</label>
+									<select class="form-control validate[required]" name="country" id="country">
+										<option value="" selected>Select Country</option>
+																					<option value="Afghanistan" >Afghanistan</option>
+																					<option value="Aland Islands" >Aland Islands</option>
+																					<option value="Albania" >Albania</option>
+																					<option value="Algeria" >Algeria</option>
+																					<option value="American Samoa" >American Samoa</option>
+																					<option value="Andorra" >Andorra</option>
+																					<option value="Angola" >Angola</option>
+																					<option value="Argentina" >Argentina</option>
+																					<option value="Armenia" >Armenia</option>
+																					<option value="Australia" >Australia</option>
+																					<option value="Austria" >Austria</option>
+																					<option value="Azerbaijan" >Azerbaijan</option>
+																					<option value="Bahrain" >Bahrain</option>
+																					<option value="Bangladesh" >Bangladesh</option>
+																					<option value="Belarus" >Belarus</option>
+																					<option value="Belgium" >Belgium</option>
+																					<option value="Benin" >Benin</option>
+																					<option value="Bhutan" >Bhutan</option>
+																					<option value="Bolivia" >Bolivia</option>
+																					<option value="Bosnia And Herzegovina" >Bosnia And Herzegovina</option>
+																					<option value="Botswana" >Botswana</option>
+																					<option value="Brazil" >Brazil</option>
+																					<option value="Brunei
+" >Brunei
+</option>
+																					<option value="Bulgaria" >Bulgaria</option>
+																					<option value="Burkina Faso" >Burkina Faso</option>
+																					<option value="Burundi" >Burundi</option>
+																					<option value="Cambodia" >Cambodia</option>
+																					<option value="Cameroon" >Cameroon</option>
+																					<option value="Canada" >Canada</option>
+																					<option value="Central African Republic" >Central African Republic</option>
+																					<option value="Chad" >Chad</option>
+																					<option value="Chile" >Chile</option>
+																					<option value="China" >China</option>
+																					<option value="Colombia" >Colombia</option>
+																					<option value="Costa Rica" >Costa Rica</option>
+																					<option value="Cote d Ivoire" >Cote d Ivoire</option>
+																					<option value="Croatia" >Croatia</option>
+																					<option value="Cuba" >Cuba</option>
+																					<option value="Cyprus" >Cyprus</option>
+																					<option value="Czech Republic" >Czech Republic</option>
+																					<option value="Democratic Republic of Congo" >Democratic Republic of Congo</option>
+																					<option value="Denmark" >Denmark</option>
+																					<option value="Ecuador" >Ecuador</option>
+																					<option value="Egypt" >Egypt</option>
+																					<option value="El Salvador" >El Salvador</option>
+																					<option value="Estonia" >Estonia</option>
+																					<option value="Ethiopia" >Ethiopia</option>
+																					<option value="Fiji" >Fiji</option>
+																					<option value="Finland" >Finland</option>
+																					<option value="France" >France</option>
+																					<option value="Gabon" >Gabon</option>
+																					<option value="Gambia" >Gambia</option>
+																					<option value="Georgia" >Georgia</option>
+																					<option value="Germany" >Germany</option>
+																					<option value="Ghana" >Ghana</option>
+																					<option value="Gibraltar" >Gibraltar</option>
+																					<option value="Greece" >Greece</option>
+																					<option value="Greenland" >Greenland</option>
+																					<option value="Guatemala" >Guatemala</option>
+																					<option value="Guinea" >Guinea</option>
+																					<option value="Guyana" >Guyana</option>
+																					<option value="Haiti" >Haiti</option>
+																					<option value="Herzegovina" >Herzegovina</option>
+																					<option value="Hong Kong" >Hong Kong</option>
+																					<option value="Hungary" >Hungary</option>
+																					<option value="Iceland" >Iceland</option>
+																					<option value="India" >India</option>
+																					<option value="Indonesia" >Indonesia</option>
+																					<option value="Iran" >Iran</option>
+																					<option value="Iraq" >Iraq</option>
+																					<option value="Ireland" >Ireland</option>
+																					<option value="Israel" >Israel</option>
+																					<option value="Italy" >Italy</option>
+																					<option value="Ivory Coast" >Ivory Coast</option>
+																					<option value="Jamaica" >Jamaica</option>
+																					<option value="Japan" >Japan</option>
+																					<option value="Jordan" >Jordan</option>
+																					<option value="Kazakhstan" >Kazakhstan</option>
+																					<option value="Kenya" >Kenya</option>
+																					<option value="Korea" >Korea</option>
+																					<option value="Kuwait" >Kuwait</option>
+																					<option value="Kyrgyzstan" >Kyrgyzstan</option>
+																					<option value="Laos" >Laos</option>
+																					<option value="Latvia" >Latvia</option>
+																					<option value="Lebanon" >Lebanon</option>
+																					<option value="Lesotho" >Lesotho</option>
+																					<option value="Liberia" >Liberia</option>
+																					<option value="Libya" >Libya</option>
+																					<option value="Liechtenstein" >Liechtenstein</option>
+																					<option value="Lithuania" >Lithuania</option>
+																					<option value="Luxembourg" >Luxembourg</option>
+																					<option value="Macao" >Macao</option>
+																					<option value="Macedonia" >Macedonia</option>
+																					<option value="Madagascar" >Madagascar</option>
+																					<option value="Malawi" >Malawi</option>
+																					<option value="Malaysia" >Malaysia</option>
+																					<option value="Maldives" >Maldives</option>
+																					<option value="Mali" >Mali</option>
+																					<option value="Malta" >Malta</option>
+																					<option value="Mauritius" >Mauritius</option>
+																					<option value="Mexico" >Mexico</option>
+																					<option value="Moldova" >Moldova</option>
+																					<option value="Monaco" >Monaco</option>
+																					<option value="Mongolia" >Mongolia</option>
+																					<option value="Morocco" >Morocco</option>
+																					<option value="Mozambique" >Mozambique</option>
+																					<option value="Myanmar" >Myanmar</option>
+																					<option value="Namibia" >Namibia</option>
+																					<option value="Nepal" >Nepal</option>
+																					<option value="Netherlands" >Netherlands</option>
+																					<option value="New Caledonia" >New Caledonia</option>
+																					<option value="New Zealand" >New Zealand</option>
+																					<option value="Niger" >Niger</option>
+																					<option value="Nigeria" >Nigeria</option>
+																					<option value="North Korea" >North Korea</option>
+																					<option value="Norway" >Norway</option>
+																					<option value="Oman" >Oman</option>
+																					<option value="Pakistan" >Pakistan</option>
+																					<option value="Palestine" >Palestine</option>
+																					<option value="Panama" >Panama</option>
+																					<option value="Papua New Guinea" >Papua New Guinea</option>
+																					<option value="Paraguay" >Paraguay</option>
+																					<option value="Peru" >Peru</option>
+																					<option value="Philippines" >Philippines</option>
+																					<option value="Poland" >Poland</option>
+																					<option value="Portugal" >Portugal</option>
+																					<option value="Qatar" >Qatar</option>
+																					<option value="Republic of Congo" >Republic of Congo</option>
+																					<option value="Romania" >Romania</option>
+																					<option value="Russia" >Russia</option>
+																					<option value="Rwanda" >Rwanda</option>
+																					<option value="Saudi Arabia" >Saudi Arabia</option>
+																					<option value="Senegal" >Senegal</option>
+																					<option value="Serbia And Montenegro" >Serbia And Montenegro</option>
+																					<option value="Seychelles" >Seychelles</option>
+																					<option value="Sierra Leone" >Sierra Leone</option>
+																					<option value="Singapore" >Singapore</option>
+																					<option value="Slovakia" >Slovakia</option>
+																					<option value="Slovenia" >Slovenia</option>
+																					<option value="Somalia" >Somalia</option>
+																					<option value="South Africa" >South Africa</option>
+																					<option value="South Sudan" >South Sudan</option>
+																					<option value="Spain" >Spain</option>
+																					<option value="Sri Lanka" >Sri Lanka</option>
+																					<option value="Sudan" >Sudan</option>
+																					<option value="Sweden" >Sweden</option>
+																					<option value="Switzerland" >Switzerland</option>
+																					<option value="Syrian Arab Republic" >Syrian Arab Republic</option>
+																					<option value="Taiwan" >Taiwan</option>
+																					<option value="Tajikistan" >Tajikistan</option>
+																					<option value="Tanzania" >Tanzania</option>
+																					<option value="Thailand" >Thailand</option>
+																					<option value="Togo" >Togo</option>
+																					<option value="Tunisia" >Tunisia</option>
+																					<option value="Turkey" >Turkey</option>
+																					<option value="Turkmenistan" >Turkmenistan</option>
+																					<option value="Uganda" >Uganda</option>
+																					<option value="Ukraine" >Ukraine</option>
+																					<option value="United Arab Emirates" >United Arab Emirates</option>
+																					<option value="United Kingdom" >United Kingdom</option>
+																					<option value="United States" >United States</option>
+																					<option value="Uruguay" >Uruguay</option>
+																					<option value="Uzbekistan" >Uzbekistan</option>
+																					<option value="Vatican City St." >Vatican City St.</option>
+																					<option value="Venezuela" >Venezuela</option>
+																					<option value="Vietnam" >Vietnam</option>
+																					<option value="Yemen" >Yemen</option>
+																					<option value="Zambia" >Zambia</option>
+																					<option value="Zimbabwe" >Zimbabwe</option>
+											
+									</select>
+								</div>	
+								<div class="form-group col-md-6">
+									<label for="">Telephone</label><br/>
+									<div class="pinCode pull-left">
+										<input type="text" class="form-control validate[optional,custom[mynumber],maxSize[4]]" id="phone1" name="phone1" placeholder="" readonly="" value="">
+									</div>
+									<div class="conCode pull-left">
+										<input type="text" class="form-control validate[optional,custom[onlyNumberSp],maxSize[4]]" id="phone2" name="phone2" placeholder="" value="">
+									</div>
+									<div class="number pull-left">
+										<input type="text" class="form-control validate[optional,custom[onlyNumberSp],maxSize[12]" id="phone3" name="phone3" placeholder="" value="">
+									</div>
+									<br/>
+									<div class="pinCode pull-left" style="text-align:center;">
+										Country Code
+									</div>
+									<div class="conCode pull-left" style="text-align:center;">
+										Area Code
+									</div>
+									<div class="number pull-left" style="text-align:center;">
+										Phone Number
+									</div>												
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-group col-md-6">
+									<label for="">Fax</label><br/>
+									<div class="pinCode pull-left">
+										<input type="text" class="form-control validate[optional,custom[mynumber],maxSize[4]]" id="fax1" name="fax1" placeholder="" readonly="" value="">
+									</div>
+									<div class="conCode pull-left">
+										<input type="text" class="form-control validate[optional,custom[onlyNumberSp],maxSize[4]]" id="fax2" name="fax2" placeholder="" value="">
+									</div>
+									<div class="number pull-left">
+										<input type="text" class="form-control validate[optional,custom[onlyNumberSp],maxSize[12]]" id="fax3" name="fax3" placeholder="" value="">
+									</div>
+									<br/>
+									<div class="pinCode pull-left" style="text-align:center;">
+										Country Code
+									</div>
+									<div class="conCode pull-left" style="text-align:center;">
+										Area Code
+									</div>
+									<div class="number pull-left" style="text-align:center;">
+										Fax Number
+									</div>												
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-group col-md-6">											
+									<label for=""><span class="red">*</span>Mobile</label><br/>										
+									<div class="pinCode pull-left">												
+										<input type="text" class="validate[required,custom[mynumber]] form-control" id="mobile1" name="mobile1" placeholder="" readonly="" value="">											
+									</div>											
+									<div class="number1 pull-left">												
+										<input type="text" class="form-control validate[required,custom[onlyNumberSp],maxSize[12]]" id="mobile2" name="mobile2" placeholder="" value="">											
+									</div><br/>											
+									<div class="pinCode pull-left" style="text-align:center;">Country Code</div>											
+									<div class="number pull-left" style="text-align:center;">Mobile Number</div>
+									<div class="clearfix"></div>										
+								</div>										
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>E-Mail</label>
+									<input type="text" class="form-control validate[required,custom[email]]" id="email1" name="email1" placeholder="" readonly="" value="">
+								</div>
+								<div class="clearfix"></div>
+								<div class="form-group col-md-6">
+									<label for="">Alternate Email</label>
+									<input type="text" class="form-control validate[optional,custom[email]]" id="alt_email" name="alt_email" placeholder="" value="">
+								</div>	
+								<div class="form-group col-md-6">
+									<label for="">Website</label>
+									<input type="text" class="form-control" id="website" name="website" placeholder="" value="">
+								</div>
+								
+								
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>PAN Number</label>
+									<input type="text" class="form-control validate[required]" id="pannumber" name="pannumber" placeholder="" value="">
+								</div>	
+								<div class="form-group col-md-6">
+									<label for="">TAN Number</label>
+									<input type="text" class="form-control" id="tannumber" name="tannumber" placeholder="" value="">
+								</div>	
+								<div class="form-group col-md-12">
+									<label for=""><span class="red">*</span>GST Number</label>
+									<input type="text" class="form-control validate[required]" id="gstnumber" name="gstnumber" maxlength="15" placeholder="" value="">
+								</div>
+								<div class="form-group col-md-12" style="color:#ff0000 !important;">
+									<span style="color:#ff0000 !important;">
+										<ul class="contentlist" style="margin-top:-25px;">
+											<li><strong>In case of International Exhibitor, Please type 'NA' in GST Number Field.</li>
+											<li><strong>Service Account Code:-</strong> 9985</li>
+											<li><strong>FICCI  Delhi GST No/ID:-</strong> 07AAACF1282E1Z1</li>
+										</ul>	
+									</span>
+								</div>
+								
+								
+								<div class="form-group col-md-12">
+									<hr style="height: 1px; background-color:#C92A2A;" />
+									
+								</div>
+								<h4 class="col-md-12 col-sm-12 col-xs-12">Exhibit Information</h4>
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>Scheme</label>
+									<select class="form-control validate[required]" id="scheme" name="scheme">
+										<option value="" selected>Select Scheme</option>
+										<option value="Shell" >Shell</option>
+										<option value="Bare" >Bare</option>
+										<option value="Pavilion" >Pavilion</option>
+									</select>											
+								</div>
+																<div id="mypavilion" class="form-group col-md-6" style="display:none;">
+																	<label for="" style="text-transform:uppercase;"><span class="red">*</span>Pavilion Name</label>
+									<select class="form-control validate[required]" id="pavilion" name="pavilion">
+										<option value="" selected>Select Pavilion</option>
+										<option value="Isreal" >Isreal</option>
+										<option value="European Union" >European Union</option>
+										<option value="Canada" >Canada</option>
+										<option value="Turkey" >Turkey</option>
+									</select>								
+								</div>
+								<div class="form-group col-md-6">
+									<label for=""><span class="red">*</span>Area</label>
+									<input type="text"  class="form-control validate[required]"  id="area" name="area" placeholder="" value="" >
+								</div>										
+
+
+
+								<div class="col-xs-12">
+									<div class="form-group">
+										<div class="checkbox" style="text-align:justify;">
+											<label>
+												<input type="checkbox" name="agree" id="agree" value="Yes" class="validate[required,custom[myterms]]"> <span class="red">*</span>I have carefully read and understood the <a href="#" target="_blank">General Exhibitor Rules</a> printed overleaf and I agree to abide by them without any reservations whatsoever. I further understand that this Application form is valid only if accompanied by payment as per the specified payment schedule in the <a href="#" target="_blank">General Exhibitor Rules</a> and as detailed under. 
+											</label>
+										</div>
+									</div>
+								</div> 
+								<div class="col-xs-12">
+									<div class="form-group">
+										<div class="checkbox">
+											<img src="captcha.php" id="captcha" style="vertical-align:middle;" />
+											<a href="#"><img src="images/refresh.png" id="captcha" style="vertical-align:middle;" onclick="document.getElementById('captcha').src='captcha.php?'+Math.random();document.getElementById('captcha-form').focus();" style="vertical-align:middle;"  id="change-image" title="Not readable? Change text" /></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="form-group">
+										<div class="form-group col-md-6">
+											<label for=""><span class="red">*</span>Captcha</label>
+											<input type="text" class="form-control validate[required]" id="captcha" name="captcha" placeholder="">
+										</div>	
+									</div>
+								</div>  										
+								<div class="form-group col-md-12 text-right">
+									<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+								</div> 
+							</form> 
+
+						</div>
+						<div class="col-lg-4">
+							<div class="contentHolderright">
+																 								 <div class="rightBox">
+									<!-- <h4 style="margin-bottom:20px;">Exhibitor Login</h4> -->
+										<div class="photo-slider">
+										<!-- <form id="loginfrm" name="loginfrm" method="post" class="row" action="usertype.php">
+											<div class="form-group">
+												<label for="" class="col-lg-3 col-sm-3 col-md-3 colxs-12 control-label">Username:</label>
+												<div class="col-lg-9 col-sm-9 col-md-9 colxs-12 ">
+													<input type="text" class="form-control validate[required,custom[email]]" id="login" name="login" placeholder="Enter E-Mail" size="30">
+												</div>
+											</div>
+											<div class="clearfix"></div><br/>
+											<div class="form-group">
+												<label for="inputPassword3" class="col-lg-3 col-sm-3 col-md-3 colxs-12  control-label">Password:</label>
+												<div class="col-lg-9 col-sm-9 col-md-9 colxs-12 ">
+													<input type="password" class="form-control validate[required]" id="password" name="password" placeholder="Password">												
+													<input type="hidden" name="FormAction" value="login">
+												</div>
+											</div>
+											<div class="clearfix"></div><br/>
+											<div class="form-group">
+												<div class="col-lg-offset-3 col-lg-9">
+													<input type="submit" name="submit" id="submit" value="Sign In" class="btn btn-success">
+													<a style="color:#d08a02; text-decoration:none;" class="forgot" href="#">Forgot Password ?</a> 
+												</div>
+											</div>
+										</form> -->										
+									</div>
+								</div> 
+																<div class="linkbox">
+									<a href="ExhibitorRegistration.php">
+										<span class="glyphicon glyphicon-user icontext"></span> 
+										<span class="span2">EXHIBITOR REGISTRATION</span>
+									</a>
+								</div>
+								<div class="linkbox">
+									<a href="Hosted-Delegate-Registration.php">
+										<span class="glyphicon glyphicon-user icontext"></span> 
+										<span class="span2">HOSTED DELEGATE REGISTRATION</span>
+									</a>
+								</div>
+								<div class="linkbox">
+									<a href="EmbassyRegistration.php">
+										<span class="glyphicon glyphicon-user icontext"></span> 
+										<span class="span2">EMBASSY REGISTRATION</span>
+									</a>
+								</div>								
+								<div class="linkbox">
+									<a href="delegate.php" target="_blank">
+										<span class="glyphicon glyphicon-user icontext"></span> 
+										<span class="span2">CONFERENCE REGISTRATION</span>
+									</a>
+								</div>
+								<div class="linkbox">
+									<a href="VisitorRegistration.php">
+										<span class="glyphicon glyphicon-user icontext"></span> 
+										<span class="span2">EXHIBITION VISITOR REGISTRATION</span>
+									</a>
+								</div>
+								<div class="linkbox">
+									<a href="MediaRegistration.php">
+										<span class="glyphicon glyphicon-user icontext"></span> 
+										<span class="span2">MEDIA REGISTRATION</span>
+									</a>
+								</div>								
+								<!--<div class="linkbox">
+									<a href="#" target="_blank">
+										<span class="glyphicon glyphicon-link icontext"></span> 
+										<span class="span2">CONFERENCE AGENDA</span>
+									</a>
+								</div>-->
+								<div class="linkbox">
+									<a href="pdf/2017/Layout plan.pdf" target="_blank">
+										<span class="glyphicon glyphicon-link icontext"></span> 
+										<span class="span2">EXHIBITION LAYOUT PLAN</span>
+									</a>
+								</div>
+								<div class="linkbox">
+									<a href="pdf/2017/HIGHER EDUCATION SPONSORSHIP OPPORTUNITIES.pdf" target="_blank">
+										<span class="glyphicon glyphicon-file icontext"></span> 
+										<span class="span2">SPONSORSHIP OPPORTUNITIES</span>
+									</a>
+								</div>
+								<div class="linkbox">
+									<a href="advt-non-exhibitor.php">
+										<span class="glyphicon glyphicon-file icontext"></span> 
+										<span class="span2">ADVERTISEMENT OPPORTUNITIES</span>
+									</a>
+								</div>
+								
+																</div>
+						</div>
+					</section>
+					<!-- footer start here -->
+					<section class="container footermain">
+						<div class="col-lg-12">
+														<!--<div class="row">
+								<div class="col-lg-8">
+									<div class="row">
+										<div class="col-lg-4 footerlinks">
+											<h5>The Show</h5>
+											<ul>
+												<li><a href="AboutEvent.php">About the Event</a></li>
+												<li><a href="Organisers.php">About Organisers</a></li>	
+												<li><a href="features.php">Event Features</a></li>
+												<li><a href="activities.php">Event Activities</a></li>
+												<li><a href="SupportingOrganisers.php">Supporting Organisations</a></li>
+												<li><a href="pdf/2017/postshowreport.pdf" target="_blank">Post Show Report - HES 2016</a></li>
+											</ul>
+										</div>
+										<div class="col-lg-4 footerlinks">
+											<h5>Exhibition</h5>
+											<ul>
+												<li><a href="WhyExhibit.php">Why Exhibit?</a></li>
+												<li><a href="ExhibitorProfile.php">Exhibitor Profile</a></li>
+												<li><a href="Login.php">Exhibitor Login</a></li>				
+												<li><a href="ExhibitorRegistration.php">Exhibitor Registration</a></li>
+												<li><a href="pdf/HES layout.pdf" target="_blank">Exhibition Layout Plan</a></li>
+												<li><a href="VisaInvitation-Exhibitor.php">Visa Invitation Letter</a></li>
+												<li><a href="StandPackages.php">Stand And Packages</a></li>
+												<li><a href="WhyVisit.php">Why Visit?</a></li>				
+												<li><a href="VisitorRegistration.php">Visitor Registration</a></li>
+												<li><a href="TravelPartner.php">Official Travel Partner</a></li>
+											</ul>
+										</div>
+										<div class="col-lg-4 footerlinks">
+											<h5>Conference</h5>
+											<ul>
+												<li><a href="Con-WhyAttend.php">Why Attend?</a></li>
+												<li><a href="Con-WhoAttend.php">Who Can Attend?</a></li>
+												<li><a href="Con-Highlights.php">Special Features</a></li>
+												<li><a href="uc.php">Conference Agenda</a></li>
+												<li><a href="delegate.php" target="_blank">Delegate Registration</a></li>
+												<li><a href="VisaInvitation-Conference.php">Visa Invitation Letter</a></li>
+											</ul>
+										</div>
+									</div>
+									
+									
+									<div class="row">
+										<div class="col-lg-8 footerlinks">
+											<h5>Registration</h5>									
+											<ul>
+												<li><a href="ExhibitorRegistration.php">Exhibitor Registration</a></li>
+												<li><a href="VisitorRegistration.php">Visitor Registration</a></li>
+												<li><a href="delegate.php" target="_blank">Conference Delegate Registration</a></li>
+												<li><a href="Hosted-Delegate-Registration.php">Hosted Foreign Delegate Registration</a></li>
+												<li><a href="EmbassyRegistration.php">Embassy Official Registration</a></li>
+												<li><a href="MediaRegistration.php">Media Registration</a></li>
+											</ul>
+										</div>	
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="row">
+										<div class="col-lg-4 footerlinks">
+											<div class="row">
+												<h5>Visitors</h5>
+												<ul>
+													<li><a href="WhyVisit.php">Why to Visit?</a></li>
+													<li><a href="WhoVisit.php">Who Should Visit?</a></li>
+													<li><a href="VisitorRegistration.php">Visitor Registration</a></li>
+													<li><a href="VisaInvitation-Visitor.php">Visa Invitation</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-lg-8 footerlinks">
+											<h5>Quick Links</h5>
+											<ul>
+												<li><a href="ContactUs.php">Contact Us</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>-->							<!-- copyright -->
+														<div class="col-lg-12 copyrightholder">
+								<div class="row">
+									<div class="col-lg-8 copyright">
+										<div class="row">
+											<p>Copyright &copy; 2018 FICCI Higher Education Summit And Exhibition 2018, All rights reserved | Terms of Service</p>
+											<!-- <p class="visitors">You are Visitor No. 1,615</p> -->
+											<p>&nbsp;</p>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="col-lg-12">
+											<div class="socialholder">
+												<h4>Connect with us</h4>
+												<ul class="socialIcons">
+													<li class="facebook"><a href="https://www.facebook.com/FICCIHigherEducationSummit/" target="_blank">facebook </a></li>
+													<li class="twitter"><a href="https://twitter.com/ficci_hes" target="_blank">twitter</a></li>
+													<li class="linkedin"><a href="https://www.linkedin.com/company/13196603?trk=tyah&trkInfo=clickedVertical%3Acompany%2CentityType%3AentityHistoryName%2CclickedEntityId%3Acompany_company_company_13196603%2Cidx%3A2" target="_blank">linkedin </a></li>
+													<li class="instagram"><a href="https://www.instagram.com/?hl=en" target="_blank">instagram </a></li>
+													<li class="youtube"><a href="https://www.youtube.com/channel/UCOc_KfKhsEdzit4sm-5vb_w" target="_blank">youtube </a></li>
+													
+												</ul>
+												<!--<div><a href="https://www.instagram.com/?hl=en" target="_blank"><img src="images/social/instagram1.png" broder="0" alt="instagram" /></a></div>-->
+											</div>
+										</div>
+										<!-- <div class="row">
+											<div class="col-md-12 col-sm-12">
+												<div id="defaultCountdown"></div>
+											</div>
+										</div> -->
+									</div>
+								</div>
+							</div>						</div>
+					</section>
+				</section>
+			</div>
+		</div>
+	</body>
+	
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>datatable</title>
+</head>
+<body>
+
+	<table align="center" border="1" >
+
+		<thead>
+			<th>id</th>
+			<th>Name</th>
+			<th>Company Name</th>
+			<th>Email</th>
+			<th>Mobile</th>
+			
+		</thead>
+		<tbody>
+				
+				{%for post in posts%}
+				<tr>
+					{%for i in post%}
+						{% if i==post[0]%}
+							<td>
+								<a href="{{url_for('deligdata', type=i)}}">{{i}}</a>
+							</td>
+						{%else%}	
+							<td>{{i}}</td>
+						{%endif%}	
+					{% endfor %}	
+				</tr>
+				{%endfor%}
+		</tbody>
+	</table>
+
+
+	
+</body>
+</html>

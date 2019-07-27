@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOSTED DELIGATE DATA</title>
+</head>
+<body>
+
+	<table align="center" border="1" >
+
+		<thead>
+			{% for field in field_names %}
+				<th>{{field}}</th>
+			{%endfor%}	
+		</thead>
+		<tbody>
+			<tr>
+				{% for post in posts %}
+					<td>{{post}}</td>
+				{% endfor %}	
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

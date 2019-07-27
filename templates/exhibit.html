@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+	
+<!-- <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='exhibit_style.css')}}"> -->
+
+
+<!--     <style type="text/css">
+        
+        body{
+    
+    background-image: url({{ url_for('static', filename='images/im.jpg') }});
+
+   
+            }
+
+/*h2{
+    background: pink
+}*/
+div.Exhibit {
+    margin: 0px 0px 0px 400px;
+    background: whitesmoke;
+    /*border: 1px solid black*/
+    /*position: absolute;
+    right: 1px;*/
+    border:  3px solid green;
+    padding: 50px;
+    width: 600px;
+    /*height: 20px;*/
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+    </style> -->
+</head>
+<body style="background-image: url({{ url_for('static', filename='images/im.jpg') }});">
+	{% from "_formhelpers.html" import render_field %}
+	<form method="POST" action="">
+        {{ form.csrf_token }}
+	  <div class="Exhibit" style="margin: 0px 0px 0px 400px;background:whitesmoke; border:3px solid green;
+    padding: 50px;width: 600px;">
+
+        {% if form.errors %}
+        {{ form.errors }}
+        {% endif %}
+	  	<h2>EXHIBITOR REGISTRATION</h3>
+        <hr>
+      	</hr>
+		<h3>LOGIN INFORMATION</h3>
+
+	    {{ render_field(form.email) }}
+	    {{ render_field(form.password) }}
+
+	     <h3>Contact Information</h3>
+
+	    {{ render_field(form.company) }}
+	    <h3>Head of the Organisation (CEO/MD/CMD/Director Etc.)</h3>
+	   	{{ render_field(form.title) }}
+
+	    {{ render_field(form.first_name) }}
+	    {{ render_field(form.last_name) }}
+	    {{ render_field(form.desig) }}
+	    {{ render_field(form.cont_title) }}
+	    {{ render_field(form.cont_first_name) }}
+	    {{ render_field(form.cont_last_name) }}
+	    {{ render_field(form.cont_desig) }}
+	    {{ render_field(form.add1) }}
+	    {{ render_field(form.add2) }}
+	    {{ render_field(form.city) }}
+	    {{ render_field(form.pin) }}
+	    {{ render_field(form.state) }}
+	   	
+	    <div class="form-group">
+        {{form.country.label(class="form-control-label")}}
+            
+                <select  name="country" id="country" class="form-control form-control-lg",style="width:500px">
+                    <option value="" selected >Select Country</option>
+                            <option value="Afghanistan" >Afghanistan</option>
+                            <option value="Aland Islands" >Aland Islands</option>
+                            <option value="Albania" >Albania</option>
+                            <option value="Algeria" >Algeria</option>
+                            <option value="American Samoa" >American Samoa</option>
+                            <option value="Andorra" >Andorra</option>
+                            <option value="Angola" >Angola</option>
+                            <option value="Argentina" >Argentina</option>
+                            <option value="Armenia" >Armenia</option>
+                            <option value="Australia" >Australia</option>
+                            <option value="Austria" >Austria</option>
+                            <option value="Azerbaijan" >Azerbaijan</option>
+                            <option value="Bahrain" >Bahrain</option>
+                            <option value="Bangladesh" >Bangladesh</option>
+                            <option value="Belarus" >Belarus</option>
+                            <option value="Belgium" >Belgium</option>
+                            <option value="Benin" >Benin</option>
+                            <option value="Bhutan" >Bhutan</option>
+                            <option value="Bolivia" >Bolivia</option>
+                            <option value="Bosnia And Herzegovina" >Bosnia And Herzegovina</option>
+                            <option value="Botswana" >Botswana</option>
+                            <option value="Brazil" >Brazil</option>
+                            <option value="Brunei" >Brunei</option>
+                            <option value="Bulgaria" >Bulgaria</option>
+                            <option value="Burkina Faso" >Burkina Faso</option>
+                            <option value="Burundi" >Burundi</option>
+                            <option value="Cambodia" >Cambodia</option>
+                            <option value="Cameroon" >Cameroon</option>
+                            <option value="Canada" >Canada</option>
+                            <option value="Central African Republic" >Central African Republic</option>
+                            <option value="Chad" >Chad</option>
+                            <option value="Chile" >Chile</option>
+                            <option value="China" >China</option>
+                            <option value="Colombia" >Colombia</option>
+                            <option value="Costa Rica" >Costa Rica</option>
+                            <option value="Cote d Ivoire" >Cote d Ivoire</option>
+                            <option value="Croatia" >Croatia</option>
+                            <option value="Cuba" >Cuba</option>
+                            <option value="Cyprus" >Cyprus</option>
+                            <option value="Czech Republic" >Czech Republic</option>
+                            <option value="Democratic Republic of Congo" >Democratic Republic of Congo</option>
+                            <option value="Denmark" >Denmark</option>
+                            <option value="Ecuador" >Ecuador</option>
+                            <option value="Egypt" >Egypt</option>
+                            <option value="El Salvador" >El Salvador</option>
+                            <option value="Estonia" >Estonia</option>
+                            <option value="Ethiopia" >Ethiopia</option>
+                            <option value="Fiji" >Fiji</option>
+                            <option value="Finland" >Finland</option>
+                            <option value="France" >France</option>
+                            <option value="Gabon" >Gabon</option>
+                            <option value="Gambia" >Gambia</option>
+                            <option value="Georgia" >Georgia</option>
+                            <option value="Germany" >Germany</option>
+                            <option value="Ghana" >Ghana</option>
+                            <option value="Gibraltar" >Gibraltar</option>
+                            <option value="Greece" >Greece</option>
+                            <option value="Greenland" >Greenland</option>
+                            <option value="Guatemala" >Guatemala</option>
+                            <option value="Guinea" >Guinea</option>
+                            <option value="Guyana" >Guyana</option>
+                            <option value="Haiti" >Haiti</option>
+                            <option value="Herzegovina" >Herzegovina</option>
+                            <option value="Hong Kong" >Hong Kong</option>
+                            <option value="Hungary" >Hungary</option>
+                            <option value="Iceland" >Iceland</option>
+                            <option value="India" >India</option>
+                            <option value="Indonesia" >Indonesia</option>
+                            <option value="Iran" >Iran</option>
+                            <option value="Iraq" >Iraq</option>
+                            <option value="Ireland" >Ireland</option>
+                            <option value="Israel" >Israel</option>
+                            <option value="Italy" >Italy</option>
+                            <option value="Ivory Coast" >Ivory Coast</option>
+                            <option value="Jamaica" >Jamaica</option>
+                            <option value="Japan" >Japan</option>
+                            <option value="Jordan" >Jordan</option>
+                            <option value="Kazakhstan" >Kazakhstan</option>
+                            <option value="Kenya" >Kenya</option>
+                            <option value="Korea" >Korea</option>
+                            <option value="Kuwait" >Kuwait</option>
+                            <option value="Kyrgyzstan" >Kyrgyzstan</option>
+                            <option value="Laos" >Laos</option>
+                            <option value="Latvia" >Latvia</option>
+                            <option value="Lebanon" >Lebanon</option>
+                            <option value="Lesotho" >Lesotho</option>
+                            <option value="Liberia" >Liberia</option>
+                            <option value="Libya" >Libya</option>
+                            <option value="Liechtenstein" >Liechtenstein</option>
+                            <option value="Lithuania" >Lithuania</option>
+                            <option value="Luxembourg" >Luxembourg</option>
+                            <option value="Macao" >Macao</option>
+                            <option value="Macedonia" >Macedonia</option>
+                            <option value="Madagascar" >Madagascar</option>
+                            <option value="Malawi" >Malawi</option>
+                            <option value="Malaysia" >Malaysia</option>
+                            <option value="Maldives" >Maldives</option>
+                            <option value="Mali" >Mali</option>
+                            <option value="Malta" >Malta</option>
+                            <option value="Mauritius" >Mauritius</option>
+                            <option value="Mexico" >Mexico</option>
+                            <option value="Moldova" >Moldova</option>
+                            <option value="Monaco" >Monaco</option>
+                            <option value="Mongolia" >Mongolia</option>
+                            <option value="Morocco" >Morocco</option>
+                            <option value="Mozambique" >Mozambique</option>
+                            <option value="Myanmar" >Myanmar</option>
+                            <option value="Namibia" >Namibia</option>
+                            <option value="Nepal" >Nepal</option>
+                            <option value="Netherlands" >Netherlands</option>
+                            <option value="New Caledonia" >New Caledonia</option>
+                            <option value="New Zealand" >New Zealand</option>
+                            <option value="Niger" >Niger</option>
+                            <option value="Nigeria" >Nigeria</option>
+                            <option value="North Korea" >North Korea</option>
+                            <option value="Norway" >Norway</option>
+                            <option value="Oman" >Oman</option>
+                            <option value="Pakistan" >Pakistan</option>
+                            <option value="Palestine" >Palestine</option>
+                            <option value="Panama" >Panama</option>
+                            <option value="Papua New Guinea" >Papua New Guinea</option>
+                            <option value="Paraguay" >Paraguay</option>
+                            <option value="Peru" >Peru</option>
+                            <option value="Philippines" >Philippines</option>
+                            <option value="Poland" >Poland</option>
+                            <option value="Portugal" >Portugal</option>
+                            <option value="Qatar" >Qatar</option>
+                            <option value="Republic of Congo" >Republic of Congo</option>
+                            <option value="Romania" >Romania</option>
+                            <option value="Russia" >Russia</option>
+                            <option value="Rwanda" >Rwanda</option>
+                            <option value="Saudi Arabia" >Saudi Arabia</option>
+                            <option value="Senegal" >Senegal</option>
+                            <option value="Serbia And Montenegro" >Serbia And Montenegro</option>
+                            <option value="Seychelles" >Seychelles</option>
+                            <option value="Sierra Leone" >Sierra Leone</option>
+                            <option value="Singapore" >Singapore</option>
+                            <option value="Slovakia" >Slovakia</option>
+                            <option value="Slovenia" >Slovenia</option>
+                            <option value="Somalia" >Somalia</option>
+                            <option value="South Africa" >South Africa</option>
+                            <option value="South Sudan" >South Sudan</option>
+                            <option value="Spain" >Spain</option>
+                            <option value="Sri Lanka" >Sri Lanka</option>
+                            <option value="Sudan" >Sudan</option>
+                            <option value="Sweden" >Sweden</option>
+                            <option value="Switzerland" >Switzerland</option>
+                            <option value="Syrian Arab Republic" >Syrian Arab Republic</option>
+                            <option value="Taiwan" >Taiwan</option>
+                            <option value="Tajikistan" >Tajikistan</option>
+                            <option value="Tanzania" >Tanzania</option>
+                            <option value="Thailand" >Thailand</option>
+                            <option value="Togo" >Togo</option>
+                            <option value="Tunisia" >Tunisia</option>
+                            <option value="Turkey" >Turkey</option>
+                            <option value="Turkmenistan" >Turkmenistan</option>
+                            <option value="Uganda" >Uganda</option>
+                            <option value="Ukraine" >Ukraine</option>
+                            <option value="United Arab Emirates" >United Arab Emirates</option>
+                            <option value="United Kingdom" >United Kingdom</option>
+                            <option value="United States" >United States</option>
+                            <option value="Uruguay" >Uruguay</option>
+                            <option value="Uzbekistan" >Uzbekistan</option>
+                            <option value="Vatican City St." >Vatican City St.</option>
+                            <option value="Venezuela" >Venezuela</option>
+                            <option value="Vietnam" >Vietnam</option>
+                            <option value="Yemen" >Yemen</option>
+                            <option value="Zambia" >Zambia</option>
+                            <option value="Zimbabwe" >Zimbabwe</option>
+                        </select>    
+    </div>
+    <div class="form-group" >
+	    			<span>
+                    {{ form.tel.label(class="form-control-label") }}
+                    
+                    {% if form.tel.errors %}
+                        {{ form.tel(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.tel.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                    	<input type="text" name="tel1"class= "form-control form-control-lg" placeholder="Country code" ,style="width:500px")>
+                    <input type="text" name="tel2"class="form-control form-control-lg" placeholder="Area code" ,style="width:500px")>
+                        {{ form.tel(class="form-control form-control-lg", placeholder="Telphone no" ,style="width:500px") }}
+                    {% endif %}
+                    </span>
+                </div>
+
+    <div class="form-group" >
+	    			<span>
+                    {{ form.fax.label(class="form-control-label") }}
+                    
+                    {% if form.fax.errors %}
+                        {{ form.fax(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.fax.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                    	<input type="text" name="fax1"class= "form-control form-control-lg" placeholder="Country code" ,style="width:500px")>
+                    <input type="text" name="fax2"class="form-control form-control-lg" placeholder="area code" ,style="width:500px")>
+                        {{ form.fax(class="form-control form-control-lg", placeholder="Fax No" ,style="width:500px") }}
+                    {% endif %}
+                    </span>
+                </div>            
+<div class="form-group">
+	    			<span>
+                    {{ form.mobile.label(class="form-control-label") }}
+                    
+                    {% if form.mobile.errors %}
+                        {{ form.mobile(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.mobile.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                    	<input type="text" name="mob1"class= "form-control form-control-lg" placeholder="Country code" ,style="width:500px")>
+                        {{ form.mobile(class="form-control form-control-lg", placeholder="Mobile No" ,style="width:500px") }}
+                    {% endif %}
+                    </span>
+                </div>
+        {{render_field(form.a_email)}}        
+	    {{ render_field(form.website) }}
+        {{render_field(form.pan)}}
+        {{render_field(form.tan)}}
+	    {{ render_field(form.gst) }}
+	    <h2>Exhibit Information</h2>
+        <hr>
+        {{ render_field(form.scheme) }}
+	    {{ render_field(form.area) }}
+	   	
+	   	<div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>   
+
+	  </div>
+	  
+	 </form> 
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,723 @@
+{% extends "layout.html" %}
+
+	{%block title%}Hosted Deligate {%endblock%}
+
+	
+	{%block head%}
+
+	{{super()}}
+	
+	
+	
+	<style type="text/css">\
+ 	hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+	}
+
+	div.hosted {
+	background: whitesmoke;
+	margin: 0px 0px 0px 400px;		
+/*  margin: auto;
+*/ 
+ width: 50%;
+  /*border: 3px solid green;*/
+  padding: 50px;
+	}
+
+	div.cb{
+    
+    background-image: url({{ url_for('static', filename='images/im.jpg') }});
+
+   
+            }
+
+ 	</style>
+	{%endblock%}
+	
+ 	
+{%block content%}	
+<div class="cb">
+<form id="delegateform" name="delegateform" action="" method="post" class="row" enctype="multipart/form-data">
+	{{ form.csrf_token }}
+
+	{% if form.errors %}
+        {{ form.errors }}
+    {% endif %}
+
+	{% from "delg_formhelper.html" import HostDelig_details %}
+
+	<div class="hosted">
+		<h1>Hosted Foreign Delegate Registration</h1>
+		<hr>
+		<h2>Delegate General Information</h2>	
+	{{HostDelig_details(form.recom)}}
+	{{HostDelig_details(form.reg)}}
+	{{HostDelig_details(form.attend)}}
+	{{HostDelig_details(form.title)}}
+	{{HostDelig_details(form.gender)}}
+
+	<h4 style="margin-left:15px;"><strong>Full Name (As in Passport)</strong></h4>
+
+	<div class="form-row">
+	    <div class="form-group col-md">
+	    	<label for="" style="text-transform:uppercase;"><span class="red">*</span>{{form.title.label}}</label>
+
+	    	{{form.title(class="form-control validate[required,custom[onlyLetterSp]]",style="text-transform:uppercase;")}}	
+
+		<!-- <div class="col-md-4 titleSel">													
+			<label for="" style="text-transform:uppercase;"><span class="red">*</span>{{form.title.label}}</label>
+			{{form.title(class="form-control validate[required,custom[onlyLetterSp]]",style="text-transform:uppercase;")}}	 -->
+			
+		</div>	
+
+		<div class="form-group col-md">
+			<label for="" style="text-transform:uppercase;"><span class="red">*</span>{{form.last_name.label}}</label>
+
+	    	{{form.last_name(class="form-control validate[required,custom[onlyLetterSp]]",style="text-transform:uppercase;")}}	
+		</div>
+
+		<div class="form-group col-md">
+			<label for="" style="text-transform:uppercase;"><span class="red">*</span>{{form.first_name.label}}</label>
+
+	    	{{form.first_name(class="form-control validate[required,custom[onlyLetterSp]]",style="text-transform:uppercase;")}}	
+		</div>						
+
+	
+	
+
+	<div class="form-group col-md-12">	
+		<div class="row">												
+			<div class="col-md-12">													
+				<label for="" style="text-transform:uppercase;"><span class="red" style="color: red;">*</span>You have been recommended to FICCI for HES 2019 by</label>	
+				<select class="form-control validate[required]" style="text-transform:uppercase;" name="recommendedby" id="recommendedby" onchange="selrecommend();">
+					<option value="" selected> - Select Recommended By - </option>	
+					<option value="1" >Indian mission in your country</option>	
+					<option value="2" >Your country mission in India</option>	
+					<option value="3" >Others (please specify)</option>	
+					<option value="4" >None</option>
+				</select>												
+			</div>												
+		</div>
+	</div>
+
+	<div id="othrecommendedby" class="form-group col-md-12" style="display:none;">
+		<label for="" style="text-transform:uppercase;"><span class="red">*</span>Recommended By Others (Please Specify)</label>											
+		<input type="text" class="form-control validate[required]" id="other_recommendedby" name="other_recommendedby" placeholder="" style="text-transform:uppercase;" value="">
+	</div>								
+								
+	<div class="form-group col-md-12">											
+		<div class="row">												
+			<div class="col-md-12">													
+				<label for="" style="text-transform:uppercase;"><span class="red">*</span>Occupation</label>	
+				<select class="form-control validate[required]" style="text-transform:uppercase;" name="occupation" id="occupation" onchange="seloccupation();">
+					<option value="" selected> - Select Occupation - </option>	
+					<option value="1" >Education Consultant Facilitating Overseas Admissions Approved by Respective Government</option>	
+					<option value="2" >Chancellor / Vice Chancellor / Dean of a University or Institution</option>	
+
+					<option value="3" >Director/ President / Vice President of University or Institution</option>	
+
+					<option value="4" >Senior Official from Education Ministry</option>
+
+					<option value="5" >President / Secretary of Largest Education Association</option>
+
+					<option value="6" >Journalist dealing with Education Sector</option>
+
+					<!-- <option value="7" >Education Consultant</option> -->
+					<option value="8" >Others</option>
+				</select>												
+			</div>												
+		</div>
+	</div>	
+
+	{% from "delg_formhelper.html" import HostDelig_2col %}
+	<br><br>
+	{{HostDelig_2col(form.desig,form.org)}}
+	<br><br>
+	{{HostDelig_2col(form.add1,form.add2)}}
+	<br><br>
+	{{HostDelig_2col(form.city,form.pin)}}
+	<br><br>
+ 	
+	<div class="row"></div>
+	 	<div class="form-group col-md-6">											
+			<label for="" style="text-transform:uppercase;"><span class="red"style="color:#F00;">*</span>{{form.state.label}}</label>
+
+			{{form.state(class="form-control validate[required]",style="text-transform:uppercase;")}}
+		</div>
+
+		<div class="form-group col-md-6">											
+			<label for="" style="text-transform:uppercase;"><span class="red"style="color:#F00;">*</span>Country</label>											
+			<select class="form-control validate[required]" name="country" id="country" style="text-transform:uppercase;">
+				<option value="" selected="">Select Country</option>								
+				<option value="Afghanistan" >Afghanistan</option>
+				<option value="Aland Islands" >Aland Islands</option>
+				<option value="Albania" >Albania</option>
+				<option value="Algeria" >Algeria</option>
+				<option value="American Samoa" >American Samoa</option>
+				<option value="Andorra" >Andorra</option>
+				<option value="Angola" >Angola</option>
+				<option value="Argentina" >Argentina</option>
+				<option value="Armenia" >Armenia</option>
+				<option value="Australia" >Australia</option>
+				<option value="Austria" >Austria</option>
+				<option value="Azerbaijan" >Azerbaijan</option>
+				<option value="Bahrain" >Bahrain</option>
+				<option value="Bangladesh" >Bangladesh</option>
+				<option value="Belarus" >Belarus</option>
+				<option value="Belgium" >Belgium</option>
+				<option value="Benin" >Benin</option>
+				<option value="Bhutan" >Bhutan</option>
+				<option value="Bolivia" >Bolivia</option>
+				<option value="Bosnia And Herzegovina" >Bosnia And Herzegovina</option>
+				<option value="Botswana" >Botswana</option>
+				<option value="Brazil" >Brazil</option>
+				<option value="Brunei" >Brunei</option>
+				<option value="Bulgaria" >Bulgaria</option>
+				<option value="Burkina Faso" >Burkina Faso</option>
+				<option value="Burundi" >Burundi</option>
+				<option value="Cambodia" >Cambodia</option>
+				<option value="Cameroon" >Cameroon</option>
+				<option value="Canada" >Canada</option>
+				<option value="Central African Republic" >Central African Republic</option>
+				<option value="Chad" >Chad</option>
+				<option value="Chile" >Chile</option>
+				<option value="China" >China</option>
+				<option value="Colombia" >Colombia</option>
+				<option value="Costa Rica" >Costa Rica</option>
+				<option value="Cote d Ivoire" >Cote d Ivoire</option>
+				<option value="Croatia" >Croatia</option>
+				<option value="Cuba" >Cuba</option>
+				<option value="Cyprus" >Cyprus</option>
+				<option value="Czech Republic" >Czech Republic</option>
+				<option value="Democratic Republic of Congo" >Democratic Republic of Congo</option>
+				<option value="Denmark" >Denmark</option>
+				<option value="Ecuador" >Ecuador</option>
+				<option value="Egypt" >Egypt</option>
+				<option value="El Salvador" >El Salvador</option>
+				<option value="Estonia" >Estonia</option>
+				<option value="Ethiopia" >Ethiopia</option>
+				<option value="Fiji" >Fiji</option>
+				<option value="Finland" >Finland</option>
+				<option value="France" >France</option>
+				<option value="Gabon" >Gabon</option>
+				<option value="Gambia" >Gambia</option>
+				<option value="Georgia" >Georgia</option>
+				<option value="Germany" >Germany</option>
+				<option value="Ghana" >Ghana</option>
+				<option value="Gibraltar" >Gibraltar</option>
+				<option value="Greece" >Greece</option>
+				<option value="Greenland" >Greenland</option>
+				<option value="Guatemala" >Guatemala</option>
+				<option value="Guinea" >Guinea</option>
+				<option value="Guyana" >Guyana</option>
+				<option value="Haiti" >Haiti</option>
+				<option value="Herzegovina" >Herzegovina</option>
+				<option value="Hong Kong" >Hong Kong</option>
+				<option value="Hungary" >Hungary</option>
+				<option value="Iceland" >Iceland</option>
+				<option value="India" >India</option>
+				<option value="Indonesia" >Indonesia</option>
+				<option value="Iran" >Iran</option>
+				<option value="Iraq" >Iraq</option>
+				<option value="Ireland" >Ireland</option>
+				<option value="Israel" >Israel</option>
+				<option value="Italy" >Italy</option>
+				<option value="Ivory Coast" >Ivory Coast</option>
+				<option value="Jamaica" >Jamaica</option>
+				<option value="Japan" >Japan</option>
+				<option value="Jordan" >Jordan</option>
+				<option value="Kazakhstan" >Kazakhstan</option>
+				<option value="Kenya" >Kenya</option>
+				<option value="Korea" >Korea</option>
+				<option value="Kuwait" >Kuwait</option>
+				<option value="Kyrgyzstan" >Kyrgyzstan</option>
+				<option value="Laos" >Laos</option>
+				<option value="Latvia" >Latvia</option>
+				<option value="Lebanon" >Lebanon</option>
+				<option value="Lesotho" >Lesotho</option>
+				<option value="Liberia" >Liberia</option>
+				<option value="Libya" >Libya</option>
+				<option value="Liechtenstein" >Liechtenstein</option>
+				<option value="Lithuania" >Lithuania</option>
+				<option value="Luxembourg" >Luxembourg</option>
+				<option value="Macao" >Macao</option>
+				<option value="Macedonia" >Macedonia</option>
+				<option value="Madagascar" >Madagascar</option>
+				<option value="Malawi" >Malawi</option>
+				<option value="Malaysia" >Malaysia</option>
+				<option value="Maldives" >Maldives</option>
+				<option value="Mali" >Mali</option>
+				<option value="Malta" >Malta</option>
+				<option value="Mauritius" >Mauritius</option>
+				<option value="Mexico" >Mexico</option>
+				<option value="Moldova" >Moldova</option>
+				<option value="Monaco" >Monaco</option>
+				<option value="Mongolia" >Mongolia</option>
+				<option value="Morocco" >Morocco</option>
+				<option value="Mozambique" >Mozambique</option>
+				<option value="Myanmar" >Myanmar</option>
+				<option value="Namibia" >Namibia</option>
+				<option value="Nepal" >Nepal</option>
+				<option value="Netherlands" >Netherlands</option>
+				<option value="New Caledonia" >New Caledonia</option>
+				<option value="New Zealand" >New Zealand</option>
+				<option value="Niger" >Niger</option>
+				<option value="Nigeria" >Nigeria</option>
+				<option value="North Korea" >North Korea</option>
+				<option value="Norway" >Norway</option>
+				<option value="Oman" >Oman</option>
+				<option value="Pakistan" >Pakistan</option>
+				<option value="Palestine" >Palestine</option>
+				<option value="Panama" >Panama</option>
+				<option value="Papua New Guinea" >Papua New Guinea</option>
+				<option value="Paraguay" >Paraguay</option>
+				<option value="Peru" >Peru</option>
+				<option value="Philippines" >Philippines</option>
+				<option value="Poland" >Poland</option>
+				<option value="Portugal" >Portugal</option>
+				<option value="Qatar" >Qatar</option>
+				<option value="Republic of Congo" >Republic of Congo</option>
+				<option value="Romania" >Romania</option>
+				<option value="Russia" >Russia</option>
+				<option value="Rwanda" >Rwanda</option>
+				<option value="Saudi Arabia" >Saudi Arabia</option>
+				<option value="Senegal" >Senegal</option>
+				<option value="Serbia And Montenegro" >Serbia And Montenegro</option>
+				<option value="Seychelles" >Seychelles</option>
+				<option value="Sierra Leone" >Sierra Leone</option>
+				<option value="Singapore" >Singapore</option>
+				<option value="Slovakia" >Slovakia</option>
+				<option value="Slovenia" >Slovenia</option>
+				<option value="Somalia" >Somalia</option>
+				<option value="South Africa" >South Africa</option>
+				<option value="South Sudan" >South Sudan</option>
+				<option value="Spain" >Spain</option>
+				<option value="Sri Lanka" >Sri Lanka</option>
+				<option value="Sudan" >Sudan</option>
+				<option value="Sweden" >Sweden</option>
+				<option value="Switzerland" >Switzerland</option>
+				<option value="Syrian Arab Republic" >Syrian Arab Republic</option>
+				<option value="Taiwan" >Taiwan</option>
+				<option value="Tajikistan" >Tajikistan</option>
+				<option value="Tanzania" >Tanzania</option>
+				<option value="Thailand" >Thailand</option>
+				<option value="Togo" >Togo</option>
+				<option value="Tunisia" >Tunisia</option>
+				<option value="Turkey" >Turkey</option>
+				<option value="Turkmenistan" >Turkmenistan</option>
+				<option value="Uganda" >Uganda</option>
+				<option value="Ukraine" >Ukraine</option>
+				<option value="United Arab Emirates" >United Arab Emirates</option>
+				<option value="United Kingdom" >United Kingdom</option>
+				<option value="United States" >United States</option>
+				<option value="Uruguay" >Uruguay</option>
+				<option value="Uzbekistan" >Uzbekistan</option>
+				<option value="Vatican City St." >Vatican City St.</option>
+				<option value="Venezuela" >Venezuela</option>
+				<option value="Vietnam" >Vietnam</option>
+				<option value="Yemen" >Yemen</option>
+				<option value="Zambia" >Zambia</option>
+				<option value="Zimbabwe" >Zimbabwe</option>
+					
+			</select>										
+		</div>										
+	</div>	
+
+	<div class="row">
+		<div class="form-group col ">
+			<label for="" style="text-transform:uppercase;"><span class="red"style="color:#F00;">*</span>OFFICE TELEPHONE</label>
+			<div class="form-row">
+				{%for no in form.tel%}
+				<div class="form-group col">
+					{{no(class="form-control validate[required]",style="text-transform:uppercase;")}}
+					
+					<label for="">{{no.label}}</label>
+				</div>
+				{%endfor%}
+			</div>		
+		</div>
+		
+		<div class="form-group col ">
+			<label for="" style="text-transform:uppercase;"><span class="red"style="color:#F00;">*</span>FAX</label>
+			<div class="form-row">
+				{%for no in form.fax%}
+				<div class="form-group col">
+					{{no(class="form-control validate[required]",style="text-transform:uppercase;")}}
+					<label for="">{{no.label}}</label>
+				</div>
+				{%endfor%}
+			</div>		
+		</div>	
+	</div>
+	<div class="row">
+		<div class="form-group col">
+			<label for="" style="text-transform:uppercase;"><span class="red"style="color:#F00;">*</span>MOBILE NUMBER</label>
+			<div class="form-row">
+				<div class="form-group  col-md-4">
+					
+						{{form.mobile_ccode(class="form-control validate[required]",style="text-transform:uppercase;")}}
+						<label for="">{{form.mobile_ccode.label}}</label>
+					
+				</div>	
+				<div class="form-group col">
+					{{form.mobile(class="form-control validate[required]",style="text-transform:uppercase;")}}
+					<label for="">{{form.mobile.label}}</label>
+				</div>
+			</div>
+		</div>	
+
+
+			<div class="form-group col">	
+				<label for="" style="text-transform:uppercase;">MOBILE NUMBER TO BE USED IN INDIA</label>
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						{{form.mobilei_ccode(class="form-control validate[required]",style="text-transform:uppercase;")}}
+						<label for="">{{form.mobilei_ccode.label}}</label>
+					</div>
+					
+					<div class="form-group col">
+						{{form.mobilei(class="form-control validate[required]",style="text-transform:uppercase;")}}
+						<label for="">{{form.mobilei.label}}</label>
+					</div>
+				</div>
+			</div>					
+		
+	</div>
+	<br>
+	{% from "delg_formhelper.html" import HostDelig_row %}
+	{{HostDelig_row(form.p_email)}}
+	<br>
+	{{HostDelig_row(form.o_email)}}
+	<br>
+	{{HostDelig_row(form.c_email)}}
+	<br>
+	
+	<div class="form-row">
+		<label for="" style="text-transform:uppercase;">WEBSITE</label>
+		{{form.website(class="form-control validate[required]",style="text-transform:uppercase;")}}
+	</div>
+
+	<br><br>
+	<div class="form-row">
+		<label for="" style="text-transform:uppercase;"><span class="red"style="color:#F00;">*</span>{{form.profile.label}}<span style="color:#F00;">[upto 50 words for uploading on website (along with your Name, Designaton, Organisation, Country and your recent coloured business photograph) for fixing B2B meetings]</span></label>
+		{{form.profile(style="width:615px;" ,rows="5" , class="form-control validate[required,maxSize[500]]")}}
+	</div>
+
+	<br><br>
+	<div class="form-row">
+		<label for="" style="text-transform:uppercase;"><span class="red"style="color:#F00;">*</span>{{form.d_profile.label}}<span style="color:#F00;">upto 1000 words for qualifying you as Hosted Foreign Delegate</span></label>
+		{{form.d_profile(style="width:615px;" ,rows="5" , class="form-control validate[required,maxSize[500]]")}}
+	</div>
+
+	<br><br>
+	
+	{{HostDelig_row(form.op_country)}}
+	<br><br>
+	{{HostDelig_row(form.sent_ind_17)}}
+	<br><br>
+	{{HostDelig_row(form.sent_ind_18)}}		
+	<br><br>
+	{{HostDelig_row(form.sent_cont_17)}}
+	<br><br>
+	{{HostDelig_row(form.sent_cont_18)}}
+	<br><br>
+	<div class="form-group col-md-12">											
+		<span style="color:#F00;">Please upload your recent color business digital photograph in close-up facing front white background (in .jpg or .jpeg or .gif or .png format dimension 4cm x 4cm) and file size is not less than 100KB and greater than 2MB</span>
+	</div>	
+	<hr></hr>
+	
+	<div class="form-group col-md-12">											
+		<h2>Passport Information</h2>											
+	</div>
+
+	{{HostDelig_row(form.p_name)}}
+	<br><br>
+	{{HostDelig_2col(form.dob,form.nationality)}}
+
+	<br><br>
+	<div class="row">
+	<div class="form-group col">											
+			<label for="" style="text-transform:uppercase;"><span class="red" style="color:#F00;">*</span>Passport Number</label>											
+			<input type="text" class="form-control validate[required]" id="passportno" name="passportno" placeholder="" style="text-transform:uppercase;" value="">
+		</div>
+		
+
+		<div class="form-group col">											
+			<label for="" style="text-transform:uppercase;"><span class="red">*</span>Passport Issued by Country</label>		
+			<select class="form-control validate[required]" name="pass_country" id="pass_country" style="text-transform:uppercase;">
+						<option value="" selected="">Select Country</option>						
+						<option value="Afghanistan"  >Afghanistan</option>
+						<option value="Aland Islands"  >Aland Islands</option>
+						<option value="Albania"  >Albania</option>
+						<option value="Algeria"  >Algeria</option>
+						<option value="American Samoa"  >American Samoa</option>
+						<option value="Andorra"  >Andorra</option>
+						<option value="Angola"  >Angola</option>
+						<option value="Argentina"  >Argentina</option>
+						<option value="Armenia"  >Armenia</option>
+						<option value="Australia"  >Australia</option>
+						<option value="Austria"  >Austria</option>
+						<option value="Azerbaijan"  >Azerbaijan</option>
+						<option value="Bahrain"  >Bahrain</option>
+						<option value="Bangladesh"  >Bangladesh</option>
+						<option value="Belarus"  >Belarus</option>
+						<option value="Belgium"  >Belgium</option>
+						<option value="Benin"  >Benin</option>
+						<option value="Bhutan"  >Bhutan</option>
+						<option value="Bolivia"  >Bolivia</option>
+						<option value="Bosnia And Herzegovina"  >Bosnia And Herzegovina</option>
+						<option value="Botswana"  >Botswana</option>
+						<option value="Brazil"  >Brazil</option>
+						<option value="Brunei"  >Brunei</option>
+						<option value="Bulgaria"  >Bulgaria</option>
+						<option value="Burkina Faso"  >Burkina Faso</option>
+						<option value="Burundi"  >Burundi</option>
+						<option value="Cambodia"  >Cambodia</option>
+						<option value="Cameroon"  >Cameroon</option>
+						<option value="Canada"  >Canada</option>
+						<option value="Central African Republic"  >Central African Republic</option>
+						<option value="Chad"  >Chad</option>
+						<option value="Chile"  >Chile</option>
+						<option value="China"  >China</option>
+						<option value="Colombia"  >Colombia</option>
+						<option value="Costa Rica"  >Costa Rica</option>
+						<option value="Cote d Ivoire"  >Cote d Ivoire</option>
+						<option value="Croatia"  >Croatia</option>
+						<option value="Cuba"  >Cuba</option>
+						<option value="Cyprus"  >Cyprus</option>
+						<option value="Czech Republic"  >Czech Republic</option>
+						<option value="Democratic Republic of Congo"  >Democratic Republic of Congo</option>
+						<option value="Denmark"  >Denmark</option>
+						<option value="Ecuador"  >Ecuador</option>
+						<option value="Egypt"  >Egypt</option>
+						<option value="El Salvador"  >El Salvador</option>
+						<option value="Estonia"  >Estonia</option>
+						<option value="Ethiopia"  >Ethiopia</option>
+						<option value="Fiji"  >Fiji</option>
+						<option value="Finland"  >Finland</option>
+						<option value="France"  >France</option>
+						<option value="Gabon"  >Gabon</option>
+						<option value="Gambia"  >Gambia</option>
+						<option value="Georgia"  >Georgia</option>
+						<option value="Germany"  >Germany</option>
+						<option value="Ghana"  >Ghana</option>
+						<option value="Gibraltar"  >Gibraltar</option>
+						<option value="Greece"  >Greece</option>
+						<option value="Greenland"  >Greenland</option>
+						<option value="Guatemala"  >Guatemala</option>
+						<option value="Guinea"  >Guinea</option>
+						<option value="Guyana"  >Guyana</option>
+						<option value="Haiti"  >Haiti</option>
+						<option value="Herzegovina"  >Herzegovina</option>
+						<option value="Hong Kong"  >Hong Kong</option>
+						<option value="Hungary"  >Hungary</option>
+						<option value="Iceland"  >Iceland</option>
+						<option value="India"  >India</option>
+						<option value="Indonesia"  >Indonesia</option>
+						<option value="Iran"  >Iran</option>
+						<option value="Iraq"  >Iraq</option>
+						<option value="Ireland"  >Ireland</option>
+						<option value="Israel"  >Israel</option>
+						<option value="Italy"  >Italy</option>
+						<option value="Ivory Coast"  >Ivory Coast</option>
+						<option value="Jamaica"  >Jamaica</option>
+						<option value="Japan"  >Japan</option>
+						<option value="Jordan"  >Jordan</option>
+						<option value="Kazakhstan"  >Kazakhstan</option>
+						<option value="Kenya"  >Kenya</option>
+						<option value="Korea"  >Korea</option>
+						<option value="Kuwait"  >Kuwait</option>
+						<option value="Kyrgyzstan"  >Kyrgyzstan</option>
+						<option value="Laos"  >Laos</option>
+						<option value="Latvia"  >Latvia</option>
+						<option value="Lebanon"  >Lebanon</option>
+						<option value="Lesotho"  >Lesotho</option>
+						<option value="Liberia"  >Liberia</option>
+						<option value="Libya"  >Libya</option>
+						<option value="Liechtenstein"  >Liechtenstein</option>
+						<option value="Lithuania"  >Lithuania</option>
+						<option value="Luxembourg"  >Luxembourg</option>
+						<option value="Macao"  >Macao</option>
+						<option value="Macedonia"  >Macedonia</option>
+						<option value="Madagascar"  >Madagascar</option>
+						<option value="Malawi"  >Malawi</option>
+						<option value="Malaysia"  >Malaysia</option>
+						<option value="Maldives"  >Maldives</option>
+						<option value="Mali"  >Mali</option>
+						<option value="Malta"  >Malta</option>
+						<option value="Mauritius"  >Mauritius</option>
+						<option value="Mexico"  >Mexico</option>
+						<option value="Moldova"  >Moldova</option>
+						<option value="Monaco"  >Monaco</option>
+						<option value="Mongolia"  >Mongolia</option>
+						<option value="Morocco"  >Morocco</option>
+						<option value="Mozambique"  >Mozambique</option>
+						<option value="Myanmar"  >Myanmar</option>
+						<option value="Namibia"  >Namibia</option>
+						<option value="Nepal"  >Nepal</option>
+						<option value="Netherlands"  >Netherlands</option>
+						<option value="New Caledonia"  >New Caledonia</option>
+						<option value="New Zealand"  >New Zealand</option>
+						<option value="Niger"  >Niger</option>
+						<option value="Nigeria"  >Nigeria</option>
+						<option value="North Korea"  >North Korea</option>
+						<option value="Norway"  >Norway</option>
+						<option value="Oman"  >Oman</option>
+						<option value="Pakistan"  >Pakistan</option>
+						<option value="Palestine"  >Palestine</option>
+						<option value="Panama"  >Panama</option>
+						<option value="Papua New Guinea"  >Papua New Guinea</option>
+						<option value="Paraguay"  >Paraguay</option>
+						<option value="Peru"  >Peru</option>
+						<option value="Philippines"  >Philippines</option>
+						<option value="Poland"  >Poland</option>
+						<option value="Portugal"  >Portugal</option>
+						<option value="Qatar"  >Qatar</option>
+						<option value="Republic of Congo"  >Republic of Congo</option>
+						<option value="Romania"  >Romania</option>
+						<option value="Russia"  >Russia</option>
+						<option value="Rwanda"  >Rwanda</option>
+						<option value="Saudi Arabia"  >Saudi Arabia</option>
+						<option value="Senegal"  >Senegal</option>
+						<option value="Serbia And Montenegro"  >Serbia And Montenegro</option>
+						<option value="Seychelles"  >Seychelles</option>
+						<option value="Sierra Leone"  >Sierra Leone</option>
+						<option value="Singapore"  >Singapore</option>
+						<option value="Slovakia"  >Slovakia</option>
+						<option value="Slovenia"  >Slovenia</option>
+						<option value="Somalia"  >Somalia</option>
+						<option value="South Africa"  >South Africa</option>
+						<option value="South Sudan"  >South Sudan</option>
+						<option value="Spain"  >Spain</option>
+						<option value="Sri Lanka"  >Sri Lanka</option>
+						<option value="Sudan"  >Sudan</option>
+						<option value="Sweden"  >Sweden</option>
+						<option value="Switzerland"  >Switzerland</option>
+						<option value="Syrian Arab Republic"  >Syrian Arab Republic</option>
+						<option value="Taiwan"  >Taiwan</option>
+						<option value="Tajikistan"  >Tajikistan</option>
+						<option value="Tanzania"  >Tanzania</option>
+						<option value="Thailand"  >Thailand</option>
+						<option value="Togo"  >Togo</option>
+						<option value="Tunisia"  >Tunisia</option>
+						<option value="Turkey"  >Turkey</option>
+						<option value="Turkmenistan"  >Turkmenistan</option>
+						<option value="Uganda"  >Uganda</option>
+						<option value="Ukraine"  >Ukraine</option>
+						<option value="United Arab Emirates"  >United Arab Emirates</option>
+						<option value="United Kingdom"  >United Kingdom</option>
+						<option value="United States"  >United States</option>
+						<option value="Uruguay"  >Uruguay</option>
+						<option value="Uzbekistan"  >Uzbekistan</option>
+						<option value="Vatican City St."  >Vatican City St.</option>
+						<option value="Venezuela"  >Venezuela</option>
+						<option value="Vietnam"  >Vietnam</option>
+						<option value="Yemen"  >Yemen</option>
+						<option value="Zambia"  >Zambia</option>
+						<option value="Zimbabwe"  >Zimbabwe</option>
+			</select>
+		</div>
+		</div>											
+		<br><br>
+	{{HostDelig_2col(form.pasport_issue,form.passport_exp)}}
+	<br><br>
+	{{HostDelig_2col(form.delhi_arrival,form.delhi_dept)}}
+	
+	<br><br>
+
+	<div class="form-group col-md-12">											
+			<label for="" style="text-transform:uppercase;"><span class="red">*</span>Upload My Passport Scan Copy</label>			
+			<input type="file" class="form-control validate[required,funcCall[validate2]]" id="delegate_passport" name="delegate_passport" placeholder="">
+		</div>
+		<div class="form-group col-md-12">											
+			<span class="red">Please upload file (.jpg, .gif, .png and .pdf format only) with filesize is not less than 100KB and greater than 2MB</span>
+		</div>	
+
+		<div class="form-group col-md-12">											
+			<label for="" style="text-transform:uppercase;"><span class="red">*</span>UPLOADING SCANNED COPY OF MY EMPLOYEE ID CARD ISSUED BY MY ORGANISATION HERE</label>									
+			<input type="file" class="form-control validate[required,funcCall[validate3]]" id="delegate_idcard" name="delegate_idcard" placeholder="">
+		</div>
+		<div class="form-group col-md-12">											
+			<span class="red">Please upload file (.jpg, .gif, .png and .pdf format only) with filesize is not less than 100KB and greater than 2MB</span>
+		</div>
+		
+		<div class="form-group col-md-12">											
+			<label for="" style="text-transform:uppercase;"><span class="red">*</span>UPLOADING SCANNED COPY OF MY VISITING/ BUSINESS CARD HERE</label>									
+			<input type="file" class="form-control validate[required,funcCall[validate4]]" id="delegate_businesscard" name="delegate_businesscard" placeholder="">
+		</div>
+		<div class="form-group col-md-12">											
+			<span class="red">Please upload file (.jpg, .gif, .png and .pdf format only) with filesize is not less than 100KB and greater than 2MB</span>
+		</div>			
+
+		<div class="col-xs-12">											
+			<div class="form-group">												
+				<div class="checkbox">													
+					<label style="text-transform:uppercase;">														
+						<input type="checkbox" name="agree" id="agree" value="Yes" class="validate[required,custom[myterms]]"> <span class="red">*</span>I HAVE CAREFULLY READ AND UNDERSTOOD THE <a href="pdf/2019/terms-and-conditions.pdf" target="_blank">'TERMS & CONDITIONS'</a> AND ACCEPT THE SAME.
+					</label>												
+				</div>											
+			</div>										
+		</div> 													
+
+
+		<div class="form-group col-md-12">									
+
+			<label for="" style="text-transform:uppercase;text-align:justify;">AFTER SUCCESSFUL SUBMISSION OF YOUR REGISTRATION IF YOU DO NOT RECEIVE EMAIL FROM US ON YOUR REGISTERED EMAIL ID CONFIRMING ‘REGISTRATION SUBMITTED’, PLEASE CONTACT US IMMEDIATELY AT <a href="mailto:fhes@ficci.com">FHES@FICCI.COM</a> AND <a href="mailto:sudhanshu.gupta@ficci.com">SUDHANSHU.GUPTA@FICCI.COM</a>
+			TO CHECK IF YOUR REGISTRATION DETAILS HAVE BEEN RECEIVED BY US.
+			 </label>
+		</div>
+		<div class="form-group col-md-12">											
+			<label for="" style="text-transform:uppercase;text-align:justify;">SUBSEQUENTLY, WE WILL SEND <u>‘REGISTRATION APPROVED’</u> EMAIL BY 15th AUGUST TO <u>ONLY THOSE DELEGATES WHOSE REGISTRATION IS QUALIFIED AS ‘HOSTED FOREIGN DELEGATE’</u>. WITHIN 48-HOURS DELEGATE TO CONFIRM PARTICIPATION, SEND US FLIGHT DETAILS AND PERFORMA INVOICE/ PRICE FOR THAT ITINERARY FOR APPROVAL. 
+			</label>
+		</div>
+		<div class="form-group col-md-12">
+			<label for="" style="text-transform:uppercase;text-align:justify;">
+			VISA INVITATION LETTER WITH TRAVEL SCHEDULE AND STAY ARRANGEMENTS WILL BE SENT AND AIR TICKETS (UPTO USD 700) AND HOTEL STAY WILL BE RESERVED BY THE ORGANIZERS FOR DELEGATES.
+		</label>
+		</div>
+		<div class="form-group col-md-12">											
+			<label for="" style="text-transform:uppercase;text-align:justify;">ALL 'HOSTED FOREIGN DELEGATES' UPON THEIR ARRIVAL IN INDIA WILL BE REQUIRED TO DEPOSIT A TOKEN AMOUNT OF US$ 100/- AGAINST REGISTRATION FEE (REFUNDABLE AFTER THE EVENT UPON SUCCESSFUL VISIT AND SUBJECT TO FULFILLMENT OF 'TERMS AND CONDITIONS') "</label>
+		</div>	
+		<div class="form-group col-md-12">											
+			<label for="" style="text-transform:uppercase;text-align:justify;">THE VISA INVITATION LETTER WITH TRAVEL SCHEDULE AND STAY ARRANGEMENTS WILL BE SENT TO YOU AND YOUR AIR TICKETS AND HOTEL STAY WILL BE BOOKED BY THE ORGANIZERS SUBSEQUENTLY."
+			</label>
+		</div>				
+
+		<div class="form-group col-md-12">
+			<label for="" style="text-transform:uppercase;text-align:justify;">
+			DELEGATES NOT SELECTED BY 31st AUGUST 2019, BUT WILLING TO ATTEND AT OWN EXPENSES MAY KINDLY SEND EMAIL TO US AND WE WILL ISSUE VISITOR VISA INVITATION.
+		</label>
+		</div>
+
+
+		<div class="form-group col-md-12" style="background-color: #DCDCDC; padding:10px;">											
+			<label for="" style="text-transform:uppercase;text-align:justify;">
+				<h4>NOTE</h4>
+				In case you are unable to register on website or have not received ‘Registration Submitted’ email, Kindly send this Registration Form word file with details duly filled-in, enclosing the below documents as separate files (not pasting in text area) to <em style="color:#1246DA">fhes@ficci.com; sudhanshu.gupta@ficci.com;</em>
+				<br>
+				<br clear="all">
+				<p style="float: right;"><a href="pdf/2019/FHES19_Registration_HostedForeignDelegate.docx" target="_blank">Word File - Download</a></p>
+				<br>
+				<ul>
+					<li>1.	Scanned copy of Passport (valid upto June 2019)</li>
+					<li>2.	Recent color business digital photograph in close-up facing front white background (in .jpg or .jpeg or .gif or .png format dimension 4cm x 4cm)</li>
+					<li>3.	Scanned copy of Employee Identity Card (In absence of Employee Identity Card - Certificate from Organisation with Photo, Name, Designation, Title, Job responsibilities and Working since, signed and stamped by head of the organisation)</li>
+					<li>4.	Scanned copy of Business/Visiting/Name Card</li>
+					
+				</ul>
+
+			</label>
+		</div>	
+		<div class="form-group col-md-12 text-right">
+			{{form.submit(class="btn btn-success")}}											
+		</div> 		
+
+	</div>
+</form>
+</div>
+{%endblock%}

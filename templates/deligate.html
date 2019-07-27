@@ -1,0 +1,760 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="shortcut icon" type="image/png" href="../images/logo.png"/>
+<title>:: 15th FICCI HIGHER EDUCATION SUMMIT 2019 ::</title>
+<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="http://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css"/><style>
+#container{ width:65%; margin:0px auto;  }
+#titlee{ text-align:center; padding:10px 10px 10px 10px; font-size:14px; font-weight:bold; }
+
+.ques{ color:#2492B6; padding:10px; font-weight: bold;  }
+.quesMix{padding:10px; }
+.dotted td{ padding:5px; border:1px dashed #666; }
+
+
+input[type=number]{
+width:250px;
+background: rgba(255, 255, 255, 0.9);
+background:-moz-linear-gradient(90deg, #fff, #eee); /* Firefox */
+background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff), color-stop(0.2, #fff)); /* Webkit */
+border:1px solid #aaa;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+-moz-box-shadow:0 0 3px #aaa;
+-webkit-box-shadow:0 0 3px #aaa;
+padding:5px;
+}
+
+  .class9, .class10{
+    position: relative;
+    margin-bottom: 10px !important;
+
+  }
+  .class9 label, .class10 label{
+    width: 100px !important;
+    
+  }
+  .class9 input, .class10 input{
+    width: 200px !important;
+  
+  }
+  .class9 div, .class10 div{
+    float: left;
+    margin-bottom: 10px !important;
+
+  }
+
+
+@media (max-width: 736px) { 
+  .class11 div, .class12 div{
+    float: none !important;
+  }
+  .td1{ width: 90% !important; }
+  .pq1{ width: 40% !important; }
+}
+
+@media screen and (max-width: 500px) and (min-width: 300px) {
+    #container{ width:99% !important; margin:0px auto; padding:0px; }
+    .form1{padding:1px !important; margin:0px !important; } 
+    .secH{font-size:10px !important; }
+    .userInput{ width:90% !important; }
+    tr:nth-child(even) {background:#EBEBEB;}
+    tr:nth-child(odd) {background: #FFF}
+  
+}
+
+@media screen and (max-width: 960px) and (min-width: 501px) {
+    #container{ width:95% !important; margin:0px auto !important; padding:0px !important; }
+    .form1{padding:1px !important; margin:0px !important; } 
+    tr:nth-child(even) {background:#EBEBEB;}
+    tr:nth-child(odd) {background: #FFF}
+
+  
+}
+.g-recaptcha{margin-top:10px; }
+#formSubmit{margin-top:10px; }
+#formSubmit span{padding:5px 7px; background-color:#999; color:#fff; cursor:pointer; }
+#formSubmit span:hover{padding:5px 7px; background-color:#666; color:#fff; cursor:pointer; }
+#loader{ background-color: rgba(0, 0, 0, .9); padding:0px; margin:0px; top:0px; width:100%; height:100%; display:none;  z-index:1; position:fixed;  }
+.secA, .secB, .secC, .secD, .secE, .secF{ cursor:pointer; }
+.secH{ font-size: 15px !important; }
+.xpand input{ margin-right: 5px; margin-left: 40px; }
+.topth th{padding:5px;}
+.toppadding td{ padding-top: 15px; }
+</style>
+
+
+<link rel="stylesheet" href="fontawesome4.6.3/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='style.min.css') }}" />
+<link rel="stylesheet" href="text/css"  href= "{{ url_for('static', filename='jquery-ui.css') }}">
+<!-- <link rel="stylesheet" href="stat/vipin.timepicker.css" /> -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery-ui.1.12.min.js"></script>
+<script type="text/javascript" src="js/vipin.timepicker.js"></script>
+
+<!-- <script src="js/formload.js" type="text/javascript"></script> -->
+ <!-- <script src='https://www.google.com/recaptcha/api.js'></script>   -->
+<style type="text/css">
+.userInput {width:90% !important; }
+.grad{background: rgba(227,227,227,1);
+background: -moz-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(235,235,235,1) 53%, rgba(245,245,245,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(227,227,227,1)), color-stop(53%, rgba(235,235,235,1)), color-stop(100%, rgba(245,245,245,1)));
+background: -webkit-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(235,235,235,1) 53%, rgba(245,245,245,1) 100%);
+background: -o-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(235,235,235,1) 53%, rgba(245,245,245,1) 100%);
+background: -ms-linear-gradient(top, rgba(227,227,227,1) 0%, rgba(235,235,235,1) 53%, rgba(245,245,245,1) 100%);
+background: linear-gradient(to bottom, rgba(227,227,227,1) 0%, rgba(235,235,235,1) 53%, rgba(245,245,245,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e3e3', endColorstr='#f5f5f5', GradientType=0 );
+}
+.t2 input{ width: 50% !important; }
+select{ height:auto; }
+.leftpadding{ padding-left: 10px; }
+th{ border-bottom:1px dotted #222; }
+.card-body input{ margin-bottom: 10px; }
+.card-header{ padding: 5px 5px 7px 5px; }
+.paydetail input{ margin-bottom: 10px; }
+</style>
+<script src="js/formvalidation.js?v=1562653605" type="text/javascript"></script>
+
+</head>
+
+<body style="background-color:#F9F9F9;">
+<div id="loader" align="center"><img src="images/loadingimage.gif" style="margin-top:15em;" /></div>
+<div id="container">
+<form name="learningForm" id="learningForm" class="form1" action="" method="post">
+    <input type="hidden" name="totalcandidates" id="totalcandidates" value="" />
+    <input type="hidden" name="initialamt" id="initialamt" value="" />
+
+<div id="titlee">
+
+<img src="../images/logo.png" align="left" style="width: 110px;" alt="" />
+
+<img src="images/ficcilogo.jpg" align="right" style="width: 80px;" /><br />
+<span style="font-size:18px;">15th FICCI HIGHER EDUCATION SUMMIT 2019</span><br>
+<i>A Global Conference & Exhibition</i><br>
+<p><h6><b><u>REGISTRATION FORM</u></b></h6></p>
+
+
+
+</div>
+
+
+<!--<b style="padding-left:5px;">SECTION 1: Details of Products/Business of the Company:</b><br /><br /> -->
+
+<div class="grad" style="padding:10px; line-height:20px; ">
+<span class="secH"><b>Profile</b></span>
+<span style="float:right; font-size:11px;">( * ) Asterisks Mandatory</span>
+</div>
+
+<div class="quesMix">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="pq1"><span style="color:#F00;"><b>*</b></span> Name</td>
+    <td class="pq2"><input type="text" class="userInput" name="uname" id="uname" value="" placeholder="name" style="width:250px; " /></td>
+  </tr>
+  <tr>
+    <td ><span style="color:#F00;"><b>*</b></span> Designation</td>
+    <td><input type="text" class="userInput" name="desig" id="desig" value="" placeholder="designation" style="width:250px; " /></td>
+  </tr>
+  <tr>
+    <td ><span style="color:#F00;"><b>*</b></span> Name of the Company</td>
+    <td><input type="text" class="userInput" name="company" id="company" value="" placeholder="company name" style="width:250px; " /></td>
+  </tr>
+  <tr>
+    <td ><span style="color:#F00;"><b>&nbsp;</b></span> Mailing Address</td>
+    <td><textarea class="userInput" name="address" id="address" placeholder="address" cols="5" rows="3"></textarea></td>
+  </tr>
+   <tr>
+    <td ><span style="color:#F00;"><b>&nbsp;</b></span> Country</td>
+    <td>
+      <select name="country" placeholder="Country" title="Country" id="country" class="inp">
+            <option value="">Select-One</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Armenia">Armenia</option>
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Azerbaijan">Azerbaijan</option>
+            <option value="Bahamas">Bahamas</option>
+            <option value="Bahrain">Bahrain</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Barbados">Barbados</option>
+            <option value="Belarus">Belarus</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Belize">Belize</option>
+            <option value="Benin">Benin</option>
+            <option value="Bhutan">Bhutan</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+            <option value="Botswana">Botswana</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Brunei">Brunei</option>
+            <option value="Bulgaria">Bulgaria</option>
+            <option value="Burkina Faso">Burkina Faso</option>
+            <option value="Burundi">Burundi</option>
+            <option value="Cabo Verde">Cabo Verde</option>
+            <option value="Cambodia">Cambodia</option>
+            <option value="Cameroon">Cameroon</option>
+            <option value="Canada">Canada</option>
+            <option value="Central African Republic">Central African Republic</option>
+            <option value="Chad">Chad</option>
+            <option value="Chile">Chile</option>
+            <option value="China">China</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Comoros">Comoros</option>
+            <option value="Congo">Congo</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Croatia">Croatia</option>
+            <option value="Cuba">Cuba</option>
+            <option value="Cyprus">Cyprus</option>
+            <option value="Czech Republic">Czech Republic</option>
+            <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Djibouti">Djibouti</option>
+            <option value="Dominica">Dominica</option>
+            <option value="Dominican Republic">Dominican Republic</option>
+            <option value="DR Congo">DR Congo</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Egypt">Egypt</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="Equatorial Guinea">Equatorial Guinea</option>
+            <option value="Eritrea">Eritrea</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Fiji">Fiji</option>
+            <option value="Finland">Finland</option>
+            <option value="France">France</option>
+            <option value="Gabon">Gabon</option>
+            <option value="Gambia">Gambia</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Germany">Germany</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Greece">Greece</option>
+            <option value="Grenada">Grenada</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Guinea">Guinea</option>
+            <option value="Guinea-Bissau">Guinea-Bissau</option>
+            <option value="Guyana">Guyana</option>
+            <option value="Haiti">Haiti</option>
+            <option value="Holy See">Holy See</option>
+            <option value="Honduras">Honduras</option>
+            <option value="Hungary">Hungary</option>
+            <option value="Iceland">Iceland</option>
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Iran">Iran</option>
+            <option value="Iraq">Iraq</option>
+            <option value="Ireland">Ireland</option>
+            <option value="Israel">Israel</option>
+            <option value="Italy">Italy</option>
+            <option value="Jamaica">Jamaica</option>
+            <option value="Japan">Japan</option>
+            <option value="Jordan">Jordan</option>
+            <option value="Kazakhstan">Kazakhstan</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Kiribati">Kiribati</option>
+            <option value="Kuwait">Kuwait</option>
+            <option value="Kyrgyzstan">Kyrgyzstan</option>
+            <option value="Laos">Laos</option>
+            <option value="Latvia">Latvia</option>
+            <option value="Lebanon">Lebanon</option>
+            <option value="Lesotho">Lesotho</option>
+            <option value="Libya">Libya</option>
+            <option value="Liechtenstein">Liechtenstein</option>
+            <option value="Lithuania">Lithuania</option>
+            <option value="Luxembourg">Luxembourg</option>
+            <option value="Madagascar">Madagascar</option>
+            <option value="Malawi">Malawi</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Maldives">Maldives</option>
+            <option value="Mali">Mali</option>
+            <option value="Malta">Malta</option>
+            <option value="Marshall Islands">Marshall Islands</option>
+            <option value="Mauritania">Mauritania</option>
+            <option value="Mauritius">Mauritius</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Micronesia">Micronesia</option>
+            <option value="Moldova">Moldova</option>
+            <option value="Monaco">Monaco</option>
+            <option value="Mongolia">Mongolia</option>
+            <option value="Montenegro">Montenegro</option>
+            <option value="Morocco">Morocco</option>
+            <option value="Mozambique">Mozambique</option>
+            <option value="Myanmar">Myanmar</option>
+            <option value="Namibia">Namibia</option>
+            <option value="Nauru">Nauru</option>
+            <option value="Nepal">Nepal</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Niger">Niger</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="North Korea">North Korea</option>
+            <option value="Norway">Norway</option>
+            <option value="Oman">Oman</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Palau">Palau</option>
+            <option value="Panama">Panama</option>
+            <option value="Papua New Guinea">Papua New Guinea</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Peru">Peru</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Poland">Poland</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Qatar">Qatar</option>
+            <option value="Romania">Romania</option>
+            <option value="Russia">Russia</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="Saint Kitts & Nevis">Saint Kitts & Nevis</option>
+            <option value="Saint Lucia">Saint Lucia</option>
+            <option value="Samoa">Samoa</option>
+            <option value="San Marino">San Marino</option>
+            <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+            <option value="Saudi Arabia">Saudi Arabia</option>
+            <option value="Senegal">Senegal</option>
+            <option value="Serbia">Serbia</option>
+            <option value="Seychelles">Seychelles</option>
+            <option value="Sierra Leone">Sierra Leone</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Slovakia">Slovakia</option>
+            <option value="Slovenia">Slovenia</option>
+            <option value="Solomon Islands">Solomon Islands</option>
+            <option value="Somalia">Somalia</option>
+            <option value="South Africa">South Africa</option>
+            <option value="South Korea">South Korea</option>
+            <option value="South Sudan">South Sudan</option>
+            <option value="Spain">Spain</option>
+            <option value="Sri Lanka">Sri Lanka</option>
+            <option value="St. Vincent & Grenadines">St. Vincent & Grenadines</option>
+            <option value="State of Palestine">State of Palestine</option>
+            <option value="Sudan">Sudan</option>
+            <option value="Suriname">Suriname</option>
+            <option value="Swaziland">Swaziland</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Syria">Syria</option>
+            <option value="Tajikistan">Tajikistan</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="TFYR Macedonia">TFYR Macedonia</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Timor-Leste">Timor-Leste</option>
+            <option value="Togo">Togo</option>
+            <option value="Tonga">Tonga</option>
+            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+            <option value="Tunisia">Tunisia</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Turkmenistan">Turkmenistan</option>
+            <option value="Tuvalu">Tuvalu</option>
+            <option value="U.K.">U.K.</option>
+            <option value="U.S.A">U.S.A</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Uzbekistan">Uzbekistan</option>
+            <option value="Vanuatu">Vanuatu</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Viet Nam">Viet Nam</option>
+            <option value="Yemen">Yemen</option>
+            <option value="Zambia">Zambia</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+     </select>
+
+     <input type="text" class="userInput" name="pincode" id="pincode" value="" placeholder="Pin/Zip Code" style="width:190px !important; " />
+    </td>
+  </tr>
+
+  <tr>
+    <td><span style="color:#F00;"><b>&nbsp;</b></span><span style="color:#F00;"><b></b></span> State <small>(for Indian Delegates)</small></td>
+    <td>
+        <select name="state" placeholder="State" title="State" id="state" class="inp" style="width:283px;">
+     <option value="" selected="">Select-One</option>
+      <option value="Andaman and Nicobar Islands:AN"> Andaman and Nicobar Islands</option>
+    <option value="Andhra Pradesh:AD">Andhra Pradesh</option>
+<option value="Arunachal Pradesh:AR">Arunachal Pradesh</option>
+<option value="Assam:AS">Assam</option>
+<option value="Bihar:BR">Bihar</option>
+<option value="Chandigarh:CH">Chandigarh</option>
+<option value="Chattisgarh:CG">Chattisgarh</option>
+<option value="Dadra and Nagar Haveli:DN">Dadra and Nagar Haveli</option>
+<option value="Daman and Diu:DD">Daman and Diu</option>
+<option value="Delhi:DL">Delhi</option>
+<option value="Goa:GA">Goa</option>
+<option value="Gujarat:GJ">Gujarat</option>
+<option value="Haryana:HR">Haryana</option>
+<option value="Himachal Pradesh:HP">Himachal Pradesh</option>
+<option value="Jammu and Kashmir:JK">Jammu and Kashmir</option>
+<option value="Jharkhand:JH">Jharkhand</option>
+<option value="Karnataka:KA">Karnataka</option>
+<option value="Kerala:KL">Kerala</option>
+<option value="Lakshadweep Islands:LD">Lakshadweep Islands</option>
+<option value="Madhya Pradesh:MP">Madhya Pradesh</option>
+<option value="Maharashtra:MH">Maharashtra</option>
+<option value="Manipur:MN">Manipur</option>
+<option value="Meghalaya:ML">Meghalaya</option>
+<option value="Mizoram:MZ">Mizoram</option>
+<option value="Nagaland:NL">Nagaland</option>
+<option value="Odisha:OD">Odisha</option>
+<option value="Pondicherry:PY">Pondicherry</option>
+<option value="Punjab:PB">Punjab</option>
+<option value="Rajasthan:RJ">Rajasthan</option>
+<option value="Sikkim:SK">Sikkim</option>
+<option value="Tamil Nadu:TN">Tamil Nadu</option>
+<option value="Telangana:TS">Telangana</option>
+<option value="Tripura:TR">Tripura</option>
+<option value="Uttar Pradesh:UP">Uttar Pradesh</option>
+<option value="Uttarakhand:UK">Uttarakhand</option>
+<option value="West Bengal:WB">West Bengal</option>
+</select>
+        
+    </td>
+  </tr>
+
+  <tr>
+    <td><span style="color:#F00;"><b>*</b></span><span style="color:#F00;"><b></b></span> City</td>
+    <td><input type="text" class="userInput" name="city" id="city" value="" placeholder="city"   />
+        
+    </td>
+  </tr>
+
+  <tr>
+    <td><span style="color:#F00;"><b>*</b></span><span style="color:#F00;"><b></b></span> Do you have a registered GSTN</td>
+    <td>
+        <input type="radio" name="gstyesno" id="gstyes" value="gstyes">&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gstyesno" id="gstno" value="gstno">&nbsp;No&nbsp;&nbsp;
+        <input type="text" name="gstnumber" id="gstnumber" placeholder="please provide GST No." value="">
+        <br>
+        <small style="color:red;">If Yes, Provided GST No. should be issued at given mailing address for invoicing purpose.</small>
+    </td>
+  </tr>
+
+  <tr>
+    <td><span style="color:#F00;"><b>*</b></span><span style="color:#F00;"><b></b></span> Telephone/Mobile number</td>
+    <td><input type="text" class="userInput" name="tele" id="tele" value="" placeholder="telephone/mobile with country & area code"   />
+        
+    </td>
+  </tr>
+  <tr>
+    <td><span style="color:#F00;"><b>&nbsp;</b></span><span style="color:#F00;"><b></b></span> Fax No</td>
+    <td><input type="text" class="userInput" name="fax" id="fax" value="" placeholder="fax no with country & area code"   />
+        
+    </td>
+  </tr>
+
+  
+  <tr>
+    <td><span style="color:#F00;"><b>*</b></span><span style="color:#F00;"><b></b></span> Email ID</td>
+    <td>
+    <input type="text" class="userInput" name="emailid" id="emailid" value="" placeholder="email id" style="width:250px; " />
+    </td>
+  </tr>
+</table>
+</div>
+
+<br />
+<div class="secA grad" style="padding:10px; line-height:20px; "> 
+
+<span class="secH"><b>Registration Details</b></span>
+<span id="secAIcon"  style="float:right; cursor:pointer; padding-top:5px;" title="Click to explore">
+<i class="fa fa-minus fa-lg" aria-hidden="true"></i></span>
+</div>
+
+
+<div class="secAdata">
+<!-- <div style="padding:5px; background-color:#6BBEEF; line-height:20px; color:#fff;">
+Organisations should not be discriminatory towards PwDs and should treat them at par with non-PwDs. This can be truly reflected in their organisational policies and culture. The questions in this component focus on this key aspect and cover four sub-components: Equal Opportunity and Top Management Commitment; Organisational Policies and Culture; Social Responsibility (CSR); and Inclusiveness in the Supply Chain.
+</div>  -->
+
+<div class="quesMix">
+<input type="radio" name="delegate" id="idelegate" value="idelegate" style="margin: 0px 0px 10px 0px;" /> <b>Indian Delegate</b>
+
+<table width="100%" cellpadding="15" cellspacing="0" border="0" >
+  <thead>
+  <tr>
+    <th colspan="2" class="leftpadding"> Participation Details : </td>
+    
+    <th>Per delegate fee for up to 3 delegates from same organization (in INR, plus GST)</td>
+    <th>Per delegate fee if 4 or more delegates from same organization (in INR, plus GST)</td>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="leftpadding"><input type="radio" name="participant" id="nonmember" value="nonmember" /></td>
+    <td>Non FICCI Members</td>
+    <td>Rs. 12,000 per Delegate</td>
+    <td>Rs. 10,200 per Delegate</td>
+  </tr>
+  <tr>
+    <td class="leftpadding"><input type="radio" name="participant" id="corporate" value="corporate" /></td>
+    <td>FICCI Corporate Members (25% discount) (please provide membership number)</td>
+    <td>Rs. 9,000 per Delegate</td>
+    <td>Rs. 7,650 per Delegate</td>
+  </tr>
+  <tr>
+    <td class="leftpadding"><input type="radio" name="participant" id="associate" value="associate" /></td>
+    <td>FICCI Associate Members (15% discount) (please provide membership number)</td>
+    <td>Rs. 10,200 per Delegate</td>
+    <td>Rs. 8,400 per Delegate</td>
+  </tr>
+</tbody>
+</table>
+
+<input type="text" class="userInput" maxlength="6" name="membershipNumber" id="membershipNumber" value="" placeholder="membership number" style="margin-top: 10px;" />
+</div>
+
+
+
+<div class="quesMix">
+  
+  
+  <input type="radio" name="delegate" id="odelegate" value="odelegate" /> Overseas Delegate&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" name="delegate" id="sponsor" value="sponsor" /> Sponsor (please specify category)
+  <input type="text" class="userInput" name="sponsorcat" id="sponsorcat" value="" placeholder="specify category" style="margin-top: 10px;" />
+
+  <div id="overseasfees">
+      <div class="row" style="border: 1px solid #CACACA; background-color: #C8C8C8; padding-top: 10px; margin: 5px 5px;" align="center">
+          <div class="col-md-6">
+              <p>Per delegate fee for up to 3 delegates from same organization (USD) - <b style="color:#B41414;">700 per delegate</b></p>
+          </div>
+          <div class="col-md-6">
+              <p>Per delegate fee if 4 or more delegate from same organization attend (USD) - <b style="color: #B41414">595 per delegate</b></p>
+
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- <div class="ques"><b>3.</b> FICCI Member (<em>please provide your membership number</em>)</div>
+<div class="quesMix">
+  <input type="radio" name="membership" id="cmember" value="cmember" /> Corporate Member&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" name="membership" id="amember" value="amember" /> Associate Member&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="text" class="userInput" maxlength="6" name="membershipNumber" id="membershipNumber" value="" placeholder="membership number" style="margin-top: 10px;" />
+</div> -->
+
+<div class="ques"><b></b> Delegate Details: <em>(please fill the details below clearly)</em></div>
+<div class="quesMix">
+  
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne" style="color:#222;">
+          <i class="fa fa-user fa-2x" aria-hidden="true"></i> - Delegate One *
+        </a>
+      </div>
+      <div id="collapseOne" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+          <input type="text" class="userInput" name="name1" id="name1" value="" placeholder="Name" />
+          <input type="text" class="userInput" name="desig1" id="desig1" value="" placeholder="Designation" />
+          <input type="hidden" class="userInput" name="org1" id="org1" value="" placeholder="Organization" />
+          <input type="text" class="userInput" name="tele1" id="tele1" value="" placeholder="Tele/Mobile" />
+          <input type="text" class="userInput" name="emailid1" id="emailid1" value="" placeholder="Email ID" />
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo" style="color:#222;">
+          <i class="fa fa-user fa-2x" aria-hidden="true"></i> - Delegate Two
+      </a>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <input type="text" class="userInput" name="name2" id="name2" value="" placeholder="Name" />
+          <input type="text" class="userInput" name="desig2" id="desig2" value="" placeholder="Designation" />
+          <input type="hidden" class="userInput" name="org2" id="org2" value="" placeholder="Organization" />
+          <input type="text" class="userInput" name="tele2" id="tele2" value="" placeholder="Tele/Mobile" />
+          <input type="text" class="userInput" name="emailid2" id="emailid2" value="" placeholder="Email ID" />
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree" style="color:#222;">
+          <i class="fa fa-user fa-2x" aria-hidden="true"></i> - Delegate Three
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <input type="text" class="userInput" name="name3" id="name3" value="" placeholder="Name" />
+          <input type="text" class="userInput" name="desig3" id="desig3" value="" placeholder="Designation" />
+          <input type="hidden" class="userInput" name="org3" id="org3" value="" placeholder="Organization" />
+          <input type="text" class="userInput" name="tele3" id="tele3" value="" placeholder="Tele/Mobile" />
+          <input type="text" class="userInput" name="emailid3" id="emailid3" value="" placeholder="Email ID" />
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapse4" style="color:#222;">
+          <i class="fa fa-user fa-2x" aria-hidden="true"></i> - Delegate Four
+        </a>
+      </div>
+      <div id="collapse4" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <input type="text" class="userInput" name="name4" id="name4" value="" placeholder="Name" />
+          <input type="text" class="userInput" name="desig4" id="desig4" value="" placeholder="Designation" />
+          <input type="hidden" class="userInput" name="org4" id="org4" value="" placeholder="Organization" />
+          <input type="text" class="userInput" name="tele4" id="tele4" value="" placeholder="Tele/Mobile" />
+          <input type="text" class="userInput" name="emailid4" id="emailid4" value="" placeholder="Email ID" />
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapse5" style="color:#222;">
+          <i class="fa fa-user fa-2x" aria-hidden="true"></i> - Delegate Five
+        </a>
+      </div>
+      <div id="collapse5" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <input type="text" class="userInput" name="name5" id="name5" value="" placeholder="Name" />
+          <input type="text" class="userInput" name="desig5" id="desig5" value="" placeholder="Designation" />
+          <input type="hidden" class="userInput" name="org5" id="org5" value="" placeholder="Organization" />
+          <input type="text" class="userInput" name="tele5" id="tele5" value="" placeholder="Tele/Mobile" />
+          <input type="text" class="userInput" name="emailid5" id="emailid5" value="" placeholder="Email ID" />
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapse6" style="color:#222;">
+          <i class="fa fa-user fa-2x" aria-hidden="true"></i> - Delegate Six
+        </a>
+      </div>
+      <div id="collapse6" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <input type="text" class="userInput" name="name6" id="name6" value="" placeholder="Name" />
+          <input type="text" class="userInput" name="desig6" id="desig6" value="" placeholder="Designation" />
+          <input type="hidden" class="userInput" name="org6" id="org6" value="" placeholder="Organization" />
+          <input type="text" class="userInput" name="tele6" id="tele6" value="" placeholder="Tele/Mobile" />
+          <input type="text" class="userInput" name="emailid6" id="emailid6" value="" placeholder="Email ID" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div> <!-- quesMix ends -->
+
+<br clear="all" />
+
+</div>
+
+
+
+
+
+<div class="secB grad" style="padding:10px; line-height:20px; "> 
+
+<em class="secH"><b>Payment Details *</b></em>
+<span id="secBIcon"  style="float:right; cursor:pointer; padding-top:5px;" title="Click to explore">
+<i class="fa fa-minus fa-lg" aria-hidden="true"></i></span>
+</div>
+
+
+<div class="secBdata">
+<div class="ques">Payment Mode:</div>
+<div class="quesMix">
+  <input type="radio" name="paymode" id="paymodeDDCheque" value="ddcheque" /> Demand Draft/Cheque
+  <input type="radio" name="paymode" id="NEFT" value="NEFT" style="margin-left: 20px;" /> NEFT
+  <input type="radio" name="paymode" id="SWIFT" value="SWIFT" style="margin-left: 20px;" /> SWIFT
+  <input type="radio" name="paymode" id="online" value="online" style="margin-left: 20px;" /> Online 
+</div>
+
+<div class="ques">Details</div>
+<div class="quesMix paydetail">
+  <input type="text" class="userInput" name="chequeDD" id="chequeDD" value="" placeholder="Cheque / DD Number" />
+  <input type="text" class="userInput" name="bankdetail" id="bankdetail" value="" placeholder="Bank Name" />
+  <input type="text" class="userInput" name="datedd" id="datedd" value="" placeholder="Dated" readonly />
+  <input type="text" class="userInput" name="amountd" id="amountd" value="" placeholder="Amount = (Click CALCULATE button to get)" readonly /><br>
+  <input type="text" class="userInput" name="amountdgst" id="amountdgst" value="" placeholder="Amount + GST 18% = (Click CALCULATE button to get)" readonly /><br>
+  <input type="hidden" name="amountdgstsend" id="amountdgstsend" value="">
+  <button class="btn btn-primary btn-sm" id="calculate">Calculate</button>
+  
+  <br clear="all" />
+  <div style="margin-top: 10px; background-color: #FFFEB5; padding: 10px;">
+    <p><b>Payment Breakup:</b><p>
+    <p id="paymentbreakup">
+      
+    </p>
+  </div>
+</div>
+
+<div class="ques">
+  <em style="color:#C91818;">Participants can make payments through SWIFT/NEFT/Cheque or Demand Draft in favour of ‘FICCI’, payable at New Delhi.</em>
+</div>
+<div class="quesMix">
+  <div class="row" style="border:1px dotted #222; padding:10px;">
+    <div class="col-md-4">
+        <h5>SWIFT</h5>
+        <p>Bank Name: YES Bank<br>
+          A/C No: 013694600000041 <br />
+          Swift Code: YESBINBBXXX <br />
+          A/C Type: Saving  
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h5>NEFT/IFSC/RTGS</h5>
+        <p>Bank Name: Yes Bank <br />
+            A/C No: 013694600000041 <br /> 
+            NEFT/IFSC/RTGS Code: YESB0000136 <br />
+            A/C Type: Saving
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h5>Cheque/DD</h5>
+        <p>Cheque/DD to be sent to: <br />
+            <b>Ms Priyanka Upreti</b> <br />
+            Assistant Director –Education  <br />
+            FICCI <br />
+            Federation House, Tansen Marg <br />
+            New Delhi- 110001
+        </p>
+    </div>
+  </div> <!-- row ends -->
+</div> <!-- quesMix ends -->
+</div> <!-- secBdata ends -->
+
+<hr>
+<div align="center" style="padding-bottom: 10px; margin-top: 20px;">
+      <div style="padding-left: 0rem;"><b>Captcha </b><br>
+          <img src="captcha.php?rand=364319849" id='captchaimg'><br>
+      </div>
+      <input id="captcha_code" name="captcha_code" type="text" value="">
+      <div style="padding-left: 3rem;">
+        Can't read the image? click <a href='javascript: refreshCaptcha();'>here</a> to refresh.
+      </div>
+</div>
+
+
+
+<div class="g-recaptcha" align="center" data-sitekey="6LeZLQcUAAAAAOgPmqA4Y-TIeTvZh8wZgpbDMyd7"></div>
+<div align="center" id="formSubmit">
+<span id="submitt">Submit</span>
+<span id="resett">Reset</span>
+</div>
+<br />
+</form>
+</div>
+
+</body>
+</html>

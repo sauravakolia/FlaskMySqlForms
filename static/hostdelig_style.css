@@ -1,0 +1,25 @@
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+	}
+
+	div.hosted {
+	background: whitesmoke;
+	margin: 0px 0px 0px 400px;		
+/*  margin: auto;
+*/ 
+ width: 50%;
+  /*border: 3px solid green;*/
+  padding: 50px;
+	}
+
+	body{
+    
+    background-image: url({{ url_for('static', filename='images/im.jpg') }});
+
+   
+            }

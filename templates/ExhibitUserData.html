@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>datatable</title>
+</head>
+<body>
+
+	<table align="center" border="1" >
+
+		<thead>
+			{% for field in field_names %}
+				<th>{{field}}</th>
+			{%endfor%}	
+		</thead>
+		<tbody>
+			{% for post in posts %}
+			<tr>
+				{% for i in post %}
+					<td>{{i}}</td>
+				{% endfor %}	
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+</body>
+</html>

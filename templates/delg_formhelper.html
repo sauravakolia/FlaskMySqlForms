@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title></title>
+	<style type="text/css">
+		@media screen and (max-width: 500px) and (min-width: 300px){
+			.userInput{ width:90% !important; }
+		}
+
+		.card-body input{ margin-bottom: 10px; }
+	</style>
+</head>
+<body>
+	{% macro render_field(field) %}
+
+   <tr>
+	<td ><span style="color:#F00;"><b>*</b></span> {{field.label}}</td>
+	<td>{{field(class="userInput", style="width:250px;")}}</td>
+    </tr>
+	{%endmacro%}
+
+
+	{% macro deligate_details(field_name,field_desig,field_org,field_mobile,field_email) %}
+	
+        <div class="card-body">
+        	{{field_name(class=userInput,placeholder="Name")}}<br><br>
+        	{{field_desig(class=userInput,placeholder="Deisgnation")}}<br><br>
+        	{{field_org(class=userInput,placeholder="Organization")}}<br><br>
+        	{{field_mobile(class=userInput,placeholder="Tele/Mobile")}}<br><br>
+        	{{field_email(class=userInput,placeholder="Email")}}<br><br>
+         
+        </div>
+      
+	{%endmacro%}
+		
+
+	{% macro HostDelig_details(field)%}
+		<div class="form-row align-items-center">
+		<!-- <div class="form-group col-md-8">											
+			<label for="" style="text-transform:uppercase;"><span class="red" style="color:#F00;">*</span>{{field.label}}</label>
+		</div> -->
+		<div class="form-group col-md-8">
+      		<label for=""  style="text-transform:uppercase;"><span class="red" style="color:#F00;">*</span>{{field.label}}</label>
+     	 
+    	</div>
+
+		<div class="form-group col-md">
+			{{field(class="form-control validate[required]",style="text-transform:uppercase;")}}
+		</div>											
+		
+	</div>
+	{%endmacro%}
+
+	{% macro HostDelig_2col(field1,field2)%}
+	<div class="row">
+	    <div class="form group col-auto">
+	      <label for=""  style="text-transform:uppercase;"><span class="red" style="color:#F00;">*</span>{{field1.label}}</label>
+
+	      {{field1(class="form-control validate[required]",style="text-transform:uppercase;")}}
+	      
+	     </div>
+
+	    <div class="form group col-auto">
+	      <label for=""  style="text-transform:uppercase;"><span class="red" style="color:#F00;">*</span>{{field2.label}}</label>
+
+	      {{field2(class="form-control validate[required]",style="text-transform:uppercase;")}}
+	    </div>
+  	</div>
+	{%endmacro%}
+
+	{%macro HostDelig_row(field)%}
+		<div class="form-row">
+		<label for=""  style="text-transform:uppercase;"><span class="red" style="color:#F00;">*</span>{{field.label}}</label>
+
+		{{field(class="form-control validate[required]",style="text-transform:uppercase;")}}
+	</div>
+	{%endmacro%}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
+</body>
+</html>
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{%block head%}
+
+	<title>{%block title%}{%endblock%}</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+	
+<style type="text/css">
+	div.column {
+  float: right;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+div.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+div.c {
+  float: center;
+  
+}
+
+</style>
+{% endblock %}
+</head>
+<body>
+
+<div class="container" style="padding-right: 15px;
+
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-height: 100px;
+height: 150%;">
+<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 " style=" color: #000;">
+
+	<div class=" form-row">
+		
+			<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12 logo2" style="margin-top:10px; margin-right:5px; width:29%;">
+				<!-- <div class="row"> -->
+					<img src="{{url_for('static',filename='images/logoM.jpg')}}" style="width:80px;">
+					
+					<img src="{{url_for('static',filename='images/sepc-logo.png')}}" style="width:70px;margin-right:25px;">
+					<!-- <img src="images/logo-aict.jpg" style="width:70px;"> -->
+				<!-- </div> -->
+
+			</div>
+		
+
+		
+			<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 mainlogo" style="margin-left:12px; " id="middle">
+				<h3 style="white-space:nowrap;margin-top:2px;font-family:roboto;color:#990012;font-size:20px; padding-top:10px;"><strong>15<sup>th</sup> FICCI Higher Education Summit 2019</strong></h3>
+				<div style="margin-top:-6px;font-family:roboto_condensedregular;font-size:13px;color:#990012;">   A Global Conference &amp; Exhibition</div>
+				<!--<div style="white-space:nowrap;margin-top:2px;font-family:roboto_condensedregular;color:#356cb2; line-height:20px;font-size:20px;">Leapfrogging to Education 4.0: Student at the Core</div>-->
+				<div style="margin-top:6px;font-family:roboto_condensedregular;font-size:11px;color:#000;" id="middle">27<sup>th</sup> - 29<sup>th</sup> November 2019 </div>
+				<div style="font-family:roboto_condensedregular;font-size:14px;color:#000;">Vigyan Bhawan</div>
+				<div style="font-family:arial;font-size:11px;color:#366cb2;font-weight: bold;text-shadow: 2px 2px 8px #366cb2;padding-top: 5px; ">Creative Economy. Nation Building: <br>Higher Education as the catalyst</div>	
+			</div>
+
+		
+
+		
+			<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12 logo3" style="margin-top:10px; margin-left:-40px; width:29%;">
+
+				<div class="row">
+					<div class=" column">
+						<img src="{{url_for('static',filename='images/logoH.jpg')}}" style="width:100px; ">
+					</div>
+					<div class=" column">
+						<img src="{{url_for('static',filename='images/logo.png')}}" style="width:70px;">
+					</div>
+					<div class="column">
+						<img src="{{url_for('static',filename='images/logoF.png')}}" style="width:80px; margin-left:10px;">
+					</div>	
+				</div>
+			</div>
+		
+	</div>		
+
+</div>
+</div>
+
+<div class="c">
+		
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{url_for('exhibitor')}}">Exhibitor </a>
+    <a class="navbar-brand" href="{{url_for('deligate')}}" >Confernce Deligate </a>
+    <a class="navbar-brand" href="{{url_for('Host_delg')}}" >Hosted Deligate </a>
+
+		<div class="dropdown">
+			  <button class="btn btn-secondary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    USER DATA
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			    <a class="dropdown-item" href="{{url_for('exhibitdata')}}">Exhibitor Data</a>
+			    <a class="dropdown-item" href="{{url_for('exhibituserdata')}}">Exhibitor Accounts</a>
+			    <a class="dropdown-item" href="{{url_for('deligdata')}}">Confernce Deligate Data</a>
+			    <a class="dropdown-item" href="{{url_for('hostdata')}}">Hosted Deligate Data</a>
+			  </div>
+		</div>
+  </nav>
+</div>
+
+{%block content%}
+
+{%endblock%}
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
